@@ -2,7 +2,7 @@ import "server-only";
 import fs from 'fs';
 import path from 'path';
 import { sanitizeHtml, validateHtmlContent } from './html-sanitizer';
-import { SlugSchema, PageSchema, FilePathSchema, safeParseWithSchema } from './validation';
+import { SlugSchema, PageSchema, safeParseWithSchema } from './validation';
 
 // -----------------------------------------------------------------------------
 // Security Functions
