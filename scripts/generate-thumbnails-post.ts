@@ -1,10 +1,40 @@
-import "server-only";
 import fs from "fs/promises";
 import path from "path";
 import puppeteer from "puppeteer";
 import http from "http";
 import handler from "serve-handler";
-import { getAllPresentations, getPresentationData } from "@/lib/server-utils"; // Adjust the import path as needed
+
+// Helper functions to discover presentations
+function getAllPresentations() {
+  try {
+    const presentationsDir = path.join(process.cwd(), "out", "presentations");
+    const items: any[] = require('fs').readdirSync(presentationsDir, { withFileTypes: true });
+    
+    return items
+      .filter((item: any) => item.isDirectory())
+      .map((item: any) => ({ slug: item.name }));
+  } catch (error) {
+    console.error("Error reading presentation directories:", error);
+    return [];
+  }
+}
+
+function getPresentationData(slug: string) {
+  try {
+    const presentationDir = path.join(process.cwd(), "out", "presentations", slug);
+    const items: any[] = require('fs').readdirSync(presentationDir, { withFileTypes: true });
+    
+    const pageNumbers = items
+      .filter((item: any) => item.isDirectory() && /^\d+$/.test(item.name))
+      .map((item: any) => parseInt(item.name))
+      .sort((a, b) => a - b);
+    
+    return { totalPages: pageNumbers.length > 0 ? Math.max(...pageNumbers) : 0 };
+  } catch (error) {
+    console.error(`Error reading presentation ${slug}:`, error);
+    return { totalPages: 0 };
+  }
+}
 
 // Main async function to generate thumbnails
 (async () => {
@@ -42,14 +72,13 @@ import { getAllPresentations, getPresentationData } from "@/lib/server-utils"; /
         const slugDir = path.join(thumbsRoot, slug);
         await fs.mkdir(slugDir, { recursive: true });
 
-        for (let p = 1; p <= totalPages; p++) {
-          const outFile = path.join(slugDir, `${p}.jpg`);
-          try {
-            await fs.access(outFile);
-            console.log(`⏩ Skipping ${slug}/${p}.jpg (already exists)`);
-            continue;
-          } catch {}
-
+        // Only generate thumbnail for the first slide
+        const p = 1;
+        const outFile = path.join(slugDir, `${p}.jpg`);
+        try {
+          await fs.access(outFile);
+          console.log(`⏩ Skipping ${slug}/${p}.jpg (already exists)`);
+        } catch {
           const url = `http://localhost:5050/presentations/${slug}/${p}/`;
           console.log(`⏳ Generating thumbnail for ${slug}/${p}.jpg...`);
           
