@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 
 // Initialize JSDOM window for server-side DOMPurify
 const window = new JSDOM('').window;
-const purify = DOMPurify(window as unknown as Window);
+const purify = DOMPurify(window as any);
 
 // Configure allowed tags for presentation content
 const ALLOWED_TAGS = [
@@ -105,8 +105,7 @@ export function validateHtmlContent(html: string): boolean {
       ALLOWED_TAGS: ALLOWED_TAGS,
       ALLOWED_ATTR: ALLOWED_ATTR,
       FORBID_TAGS: FORBIDDEN_TAGS,
-      FORBID_ATTR: ['on*'],
-      DRY_RUN: true // Don't actually sanitize, just validate
+      FORBID_ATTR: ['on*']
     });
 
     // Check for excessive nesting (potential DoS)

@@ -115,19 +115,19 @@ describe('Server Utils', () => {
 
       const result = getAllPresentations()
       expect(result).toHaveLength(1)
-      expect(result[0].slug).toBe('valid-presentation')
+      expect(result[0]?.slug).toBe('valid-presentation')
     })
   })
 
   describe('getSlideContent', () => {
     beforeEach(() => {
       // Set development mode for more permissive validation
-      process.env.NODE_ENV = 'development'
+      (process.env as any).NODE_ENV = 'development'
     })
 
     afterEach(() => {
       // Reset to test mode
-      process.env.NODE_ENV = 'test'
+      (process.env as any).NODE_ENV = 'test'
     })
 
     it('should return slide content for valid inputs', () => {

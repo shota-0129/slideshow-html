@@ -64,7 +64,7 @@ import { getAllPresentations, getPresentationData } from "@/lib/server-utils"; /
         console.error("❌ An error occurred during thumbnail generation:", error);
     } finally {
         // Ensure browser and server are closed
-        console.log(" shutting down...");
+        console.log("shutting down...");
         await browser.close();
         server.close(() => {
           console.log("🛑 Server stopped.");

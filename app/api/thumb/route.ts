@@ -142,7 +142,7 @@ export async function GET(request: NextRequest) {
       });
       return response;
     } catch (error) {
-      logger.error("Error generating thumbnail:", error);
+      logger.error("Error generating thumbnail:", error instanceof Error ? error : new Error(String(error)));
       return new Response("Error generating thumbnail", { status: 500 });
     } finally {
       // Ensure browser and page are always closed

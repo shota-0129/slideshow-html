@@ -49,7 +49,7 @@ describe('/api/thumb', () => {
     //    For success-case tests, we'll pretend the file exists.
     mockFs.existsSync.mockReturnValue(true)
     mockFs.readFileSync = jest.fn().mockReturnValue('<html></html>')
-    mockFs.promises = { readFile: jest.fn().mockResolvedValue('<html></html>') }
+    mockFs.promises = { readFile: jest.fn().mockResolvedValue('<html></html>') } as any
     
     // Mock Puppeteer
     mockPage = {

@@ -60,12 +60,12 @@ describe('HTML Sanitizer', () => {
   describe('validateHtmlContent', () => {
     beforeEach(() => {
       // Set production mode for strict validation
-      process.env.NODE_ENV = 'production'
+      (process.env as any).NODE_ENV = 'production'
     })
 
     afterEach(() => {
       // Reset to test mode
-      process.env.NODE_ENV = 'test'
+      (process.env as any).NODE_ENV = 'test'
     })
 
     it('should validate safe HTML content', () => {
@@ -95,7 +95,7 @@ describe('HTML Sanitizer', () => {
     })
 
     it('should be more permissive in development mode', () => {
-      process.env.NODE_ENV = 'development'
+      (process.env as any).NODE_ENV = 'development'
       const unsafeHtml = '<div><script>console.log("debug")</script></div>'
       expect(validateHtmlContent(unsafeHtml)).toBe(true)
     })
