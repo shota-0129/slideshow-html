@@ -54,6 +54,9 @@ export function FullScreenViewer({
       if (['ArrowRight', 'ArrowDown', 'Enter', ' '].includes(e.key)) {
         if (currentPage < totalPages) {
           router.push(`/presentations/${slug}/${currentPage + 1}/full-screen`);
+        } else {
+          // Close full-screen when on last slide and pressing next keys
+          router.push(`/presentations/${slug}/${currentPage}`);
         }
       } else if (['ArrowLeft', 'ArrowUp'].includes(e.key)) {
         if (currentPage > 1) {
@@ -70,6 +73,9 @@ export function FullScreenViewer({
   const goToNextSlide = () => {
       if (currentPage < totalPages) {
           router.push(`/presentations/${slug}/${currentPage + 1}/full-screen`);
+      } else {
+          // Close full-screen when on last slide and clicking
+          router.push(`/presentations/${slug}/${currentPage}`);
       }
   }
 
