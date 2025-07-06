@@ -17,16 +17,20 @@ jest.mock('path', () => ({
 }));
 const mockPath = path as jest.Mocked<typeof path>;
 
-// Mock html-sanitizer functions
-jest.mock('@/lib/html-sanitizer', () => ({
-  validateHtmlContent: jest.fn(() => true),
-  sanitizeHtml: jest.fn((html: string) => {
-    // Simple mock sanitization - remove script tags and onclick
-    return html
-      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-      .replace(/onclick\s*=\s*["'][^"']*["']/gi, '');
-  })
-}));
+// Import actual html-sanitizer instead of unsafe mock
+import { validateHtmlContent, sanitizeHtml } from '@/lib/html-sanitizer';
+
+// Mock html-sanitizer functions to test different scenarios
+jest.mock('@/lib/html-sanitizer', () => {
+  const actual = jest.requireActual('@/lib/html-sanitizer');
+  return {
+    validateHtmlContent: jest.fn(() => true),
+    sanitizeHtml: jest.fn((html: string) => {
+      // Use the actual DOMPurify-based sanitizer for testing
+      return actual.sanitizeHtml(html);
+    })
+  };
+});
 
 import { validateHtmlContent, sanitizeHtml } from '@/lib/html-sanitizer';
 const mockValidateHtmlContent = validateHtmlContent as jest.MockedFunction<typeof validateHtmlContent>;
@@ -63,13 +67,12 @@ describe('JavaScript Mode Server Utils', () => {
       return pathSegment;
     });
     
-    // Reset html-sanitizer mocks
+    // Reset html-sanitizer mocks to use actual implementation
     mockValidateHtmlContent.mockReturnValue(true);
     mockSanitizeHtml.mockImplementation((html: string) => {
-      // Simple mock sanitization - remove script tags and onclick
-      return html
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        .replace(/onclick\s*=\s*["'][^"']*["']/gi, '');
+      // Use actual DOMPurify-based sanitization for security testing
+      const actual = jest.requireActual('@/lib/html-sanitizer');
+      return actual.sanitizeHtml(html);
     });
   });
   

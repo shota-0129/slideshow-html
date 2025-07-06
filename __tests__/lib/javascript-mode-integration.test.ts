@@ -69,10 +69,9 @@ describe('JavaScript Mode Integration Logic', () => {
         return content; // Return original content
       }
       
-      // Simulate sanitization (remove script tags and event handlers)
-      const sanitized = content
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        .replace(/onclick\s*=\s*["'][^"']*["']/gi, '');
+      // Use proper DOMPurify sanitization instead of unsafe regex
+      const { sanitizeHtml } = require('@/lib/html-sanitizer');
+      const sanitized = sanitizeHtml(content);
       
       return sanitized;
     }
