@@ -9,7 +9,7 @@ import { getAllPresentations, getPresentationData } from "@/lib/server-utils"; /
 // Main async function to generate thumbnails
 (async () => {
   const outDir = path.join(process.cwd(), "out");
-  const thumbsRoot = path.join(outDir, "thumbs");
+  const thumbsRoot = path.join(outDir, "thumb");
 
   // Ensure the root thumbnail directory exists
   await fs.mkdir(thumbsRoot, { recursive: true });

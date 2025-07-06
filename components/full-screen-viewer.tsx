@@ -42,6 +42,7 @@ export function FullScreenViewer({
         // eslint-disable-next-line react-hooks/exhaustive-deps
         resizeObserver.unobserve(containerRef.current);
       }
+      resizeObserver.disconnect();
     };
   }, []);
 

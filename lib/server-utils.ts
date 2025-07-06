@@ -4,6 +4,10 @@ import path from 'path';
 import { sanitizeHtml, validateHtmlContent } from './html-sanitizer';
 import { SlugSchema, PageSchema, safeParseWithSchema } from './validation';
 
+// Configuration constants for performance and security
+const MAX_DIRECTORY_ENTRIES = parseInt(process.env.MAX_DIRECTORY_ENTRIES || '100', 10);
+const MAX_TOTAL_FILES = parseInt(process.env.MAX_TOTAL_FILES || '1000', 10);
+
 // -----------------------------------------------------------------------------
 // Security Functions
 // -----------------------------------------------------------------------------
@@ -38,6 +42,10 @@ function validatePageNumber(page: number): number | null {
  * @param maxDepth - Maximum recursion depth (default: 3).
  * @param currentDepth - Current recursion depth (internal use).
  * @returns An array of full file paths for all found .html files.
+ * 
+ * Configuration:
+ * - MAX_DIRECTORY_ENTRIES: Maximum entries to process per directory (default: 100, env: MAX_DIRECTORY_ENTRIES)
+ * - MAX_TOTAL_FILES: Maximum total HTML files to collect (default: 1000, env: MAX_TOTAL_FILES)
  */
 function getHtmlFilePaths(dirPath: string, maxDepth: number = 3, currentDepth: number = 0): string[] {
     let htmlFiles: string[] = [];
@@ -48,10 +56,12 @@ function getHtmlFilePaths(dirPath: string, maxDepth: number = 3, currentDepth: n
     }
     
     try {
+        // NOTE: Using synchronous fs call for compatibility with generateStaticParams and other sync contexts
+        // TODO: Consider migrating to async fs.promises.readdir for better performance in high-traffic scenarios
         const entries = fs.readdirSync(dirPath, { withFileTypes: true });
         
-        // Limit the number of entries processed to prevent DoS
-        const limitedEntries = entries.slice(0, 100);
+        // Limit the number of entries processed to prevent DoS (configurable via MAX_DIRECTORY_ENTRIES)
+        const limitedEntries = entries.slice(0, MAX_DIRECTORY_ENTRIES);
         
         for (const entry of limitedEntries) {
             const fullPath = path.join(dirPath, entry.name);
@@ -70,8 +80,8 @@ function getHtmlFilePaths(dirPath: string, maxDepth: number = 3, currentDepth: n
                 }
             }
             
-            // Limit total files to prevent memory exhaustion
-            if (htmlFiles.length > 1000) {
+            // Limit total files to prevent memory exhaustion (configurable via MAX_TOTAL_FILES)
+            if (htmlFiles.length > MAX_TOTAL_FILES) {
                 break;
             }
         }
@@ -143,7 +153,33 @@ export function getPresentationData(slug: string): { totalPages: number } {
 export function getAllPresentations(): Array<{ slug:string; totalPages: number }> {
     try {
         const publicDir = path.join(process.cwd(), 'public');
+        // NOTE: Using synchronous fs call for compatibility with React Server Components and generateStaticParams
+        // TODO: Consider async version for better performance in high-traffic production environments
         const allEntries = fs.readdirSync(publicDir, { withFileTypes: true });
+        const presentationSlugs = allEntries
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => dirent.name);
+
+        const presentations = presentationSlugs.map(slug => {
+            const { totalPages } = getPresentationData(slug);
+            return { slug, totalPages };
+        });
+
+        return presentations.filter(p => p.totalPages > 0);
+    } catch (error) {
+        console.error("Failed to get all presentations:", error);
+        return [];
+    }
+}
+
+/**
+ * Async version of getAllPresentations for better performance in high-traffic scenarios.
+ * @returns Promise of an array of presentation objects, each with a slug and total page count.
+ */
+export async function getAllPresentationsAsync(): Promise<Array<{ slug:string; totalPages: number }>> {
+    try {
+        const publicDir = path.join(process.cwd(), 'public');
+        const allEntries = await fs.promises.readdir(publicDir, { withFileTypes: true });
         const presentationSlugs = allEntries
             .filter(dirent => dirent.isDirectory())
             .map(dirent => dirent.name);

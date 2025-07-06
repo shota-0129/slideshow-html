@@ -30,7 +30,7 @@ export default function Home() {
                 <Image
                   src={
                     isStatic
-                       ? `/thumbs/${p.slug}/1.jpg`                     
+                       ? `/thumb/${p.slug}/1.jpg`                     
                        : `/api/thumb?slug=${p.slug}&page=1`
                   }
                   alt={`${p.slug} preview`}
