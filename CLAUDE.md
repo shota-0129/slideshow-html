@@ -34,6 +34,9 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 - `npm run lint` - Run ESLint checks
 - `npm run lint:fix` - Auto-fix ESLint issues
 - `npm run type-check` - TypeScript type checking
+- `npm run test` - Run unit tests (watch mode)
+- `npm run test:coverage` - Run tests with coverage report
+- `npm run test:ci` - Run tests in CI mode (no watch)
 - `npm run security:audit` - Security vulnerability audit
 
 ## Code Style & Conventions
@@ -55,11 +58,14 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 
 ## Testing Strategy
 
+- **Unit Tests**: Jest + React Testing Library for component and utility testing
+- **Integration Tests**: API route testing with mocked dependencies
+- **Security Tests**: HTML sanitization and input validation testing  
 - **Type Safety**: TypeScript strict mode with `tsc --noEmit`
 - **Linting**: ESLint with Next.js recommended rules
-- **Security**: Built-in HTML sanitization and XSS protection
-- **Manual Testing**: Test both development and production builds
-- **Performance**: Monitor bundle size and Core Web Vitals
+- **Coverage**: Code coverage reports with minimum thresholds
+- **CI/CD**: Automated testing in GitHub Actions with multi-node versions
+- **Performance**: Lighthouse CI for performance monitoring
 
 ## Environment Setup
 
@@ -118,3 +124,4 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 - **Testing**: Test both `npm run dev` and `npm run build` before completion
 - **Documentation**: Update relevant sections when adding new features
 - **Error Handling**: Implement proper error boundaries and 404 pages
+- **Test-Driven Development**: After editing any code, ALWAYS run `npm test` immediately. If tests fail, IMMEDIATELY rollback your changes and fix the underlying issue before proceeding

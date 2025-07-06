@@ -4,31 +4,7 @@ import path from "path";
 import fs from "fs";
 import { getPresentationData } from "@/lib/server-utils";
 import logger from "@/lib/logger";
-
-// Rate limiting map (in production, use Redis or similar)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 10; // 10 requests per minute per IP
-
-/**
- * Simple rate limiting function
- */
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const userLimit = rateLimitMap.get(ip);
-
-  if (!userLimit || now > userLimit.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-    return true;
-  }
-
-  if (userLimit.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return false;
-  }
-
-  userLimit.count++;
-  return true;
-}
+import { checkRateLimit } from "@/lib/rate-limiter";
 
 /**
  * Validates slug parameter to prevent path traversal
@@ -41,7 +17,6 @@ function validateSlug(slug: string): boolean {
 }
 
 export async function GET(request: NextRequest) {
-  try {
     // Rate limiting
     const ip = request.headers.get('x-forwarded-for') ||
               request.headers.get('x-real-ip') ||
@@ -97,26 +72,28 @@ export async function GET(request: NextRequest) {
     const puppeteerTimeout = parseInt(process.env.PUPPETEER_TIMEOUT || '30000', 10);
     const isHeadless = process.env.PUPPETEER_HEADLESS !== 'false';
     
-    const browser = await puppeteer.launch({
-      headless: isHeadless,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--disable-gpu',
-        '--disable-web-security',
-        '--disable-features=VizDisplayCompositor',
-        '--memory-pressure-off',
-        '--max_old_space_size=4096'
-      ],
-      timeout: puppeteerTimeout,
-    });
-
-    let page1;
+    let browser = null;
+    let page1 = null;
+    
     try {
+      browser = await puppeteer.launch({
+        headless: isHeadless,
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-accelerated-2d-canvas',
+          '--no-first-run',
+          '--no-zygote',
+          '--disable-gpu',
+          '--disable-web-security',
+          '--disable-features=VizDisplayCompositor',
+          '--memory-pressure-off',
+          '--max_old_space_size=4096'
+        ],
+        timeout: puppeteerTimeout,
+      });
+      
       page1 = await browser.newPage();
       
       // Set security headers and disable unnecessary features
@@ -153,24 +130,26 @@ export async function GET(request: NextRequest) {
       });
 
       // Return the screenshot with configurable cache settings
-      return new Response(screenshot, {
+      const response = new Response(screenshot, {
         headers: {
           "Content-Type": "image/jpeg",
           "Cache-Control": `public, max-age=${cacheMaxAge}`,
           "X-Content-Type-Options": "nosniff",
         },
       });
+      return response;
+    } catch (error) {
+      logger.error("Error generating thumbnail:", error);
+      return new Response("Error generating thumbnail", { status: 500 });
     } finally {
-      // Ensure browser is always closed
+      // Ensure browser and page are always closed
       if (page1) {
         await page1.close().catch(() => {});
       }
-      await browser.close().catch(() => {});
+      if (browser) {
+        await browser.close().catch(() => {});
+      }
     }
-  } catch (error) {
-    logger.error("Error generating thumbnail:", error);
-    return new Response("Error generating thumbnail", { status: 500 });
-  }
 }
 
 // Static export configuration
