@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 
 // Initialize JSDOM window for server-side DOMPurify
 const window = new JSDOM('').window;
-const purify = DOMPurify(window as any);
+const purify = DOMPurify(window as unknown as typeof globalThis);
 
 // Configure allowed tags for presentation content
 const ALLOWED_TAGS = [
