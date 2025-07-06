@@ -1,18 +1,52 @@
 {
   "name": "slideshow-html",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A secure, high-performance Next.js application for viewing HTML-based presentations with thumbnail generation capabilities",
+  "keywords": [
+    "slideshow",
+    "presentation",
+    "html",
+    "nextjs",
+    "react",
+    "typescript",
+    "puppeteer",
+    "static-site"
+  ],
+  "homepage": "https://github.com/your-username/slideshow-html#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/slideshow-html/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/slideshow-html.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "build:static": "cross-env STATIC_EXPORT=true NEXT_PUBLIC_STATIC_EXPORT=true next build && next export && tsx scripts/generate-thumbnails-post.ts",
     "preview:static": "npx serve -l 5000 out",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "security:audit": "npm audit --audit-level=high",
+    "security:fix": "npm audit fix",
+    "clean": "rm -rf .next out node_modules/.cache",
+    "prepare": "husky install || true"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
+    "@types/serve-handler": "^6.1.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.363.0",
@@ -20,6 +54,7 @@
     "puppeteer": "^22.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "serve-handler": "^6.1.6",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },

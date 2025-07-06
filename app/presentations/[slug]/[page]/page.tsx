@@ -9,11 +9,28 @@ export default async function PresentationPage({ params }: { params: Params }) {
   const { slug, page } = await params;
   const currentPage = parseInt(page, 10);
 
+  // ページ番号の基本検証
+  if (isNaN(currentPage) || currentPage < 1) {
+    notFound();
+  }
+
   // サーバーサイドでスライドデータを取得
   const { totalPages } = getPresentationData(slug);
+  
+  // プレゼンテーションが存在しない場合
+  if (totalPages === 0) {
+    notFound();
+  }
+
+  // ページ番号が範囲外の場合も404を返す
+  if (currentPage > totalPages) {
+    notFound();
+  }
+
   const slideContent = getSlideContent(slug, currentPage);
 
-  if (totalPages === 0 || !slideContent) {
+  // スライドコンテンツが取得できない場合
+  if (!slideContent) {
     notFound();
   }
 
@@ -40,4 +57,5 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export const dynamicParams = false;
+// dynamicParamsのデフォルト値はtrueなので、明示的な設定は不要
+// 開発環境では動的パラメータが許可され、静的エクスポート時は自動的に制限される

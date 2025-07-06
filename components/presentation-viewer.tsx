@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { formatSlugAsTitle } from '@/lib/utils';
 import { ArrowLeft, ArrowRight, Home, Maximize } from 'lucide-react';
-import { useEffect, useRef, useState, useLayoutEffect } from 'react';
+import { useEffect, useRef, useState, useLayoutEffect, useCallback } from 'react';
 
 interface PresentationViewerProps {
   slug: string;
@@ -36,38 +36,45 @@ export function PresentationViewer({
         setScale(Math.min(scaleX, scaleY));
       }
     };
+    
     calculateScale();
     const resizeObserver = new ResizeObserver(calculateScale);
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    const currentContainer = containerRef.current;
+    
+    if (currentContainer) {
+      resizeObserver.observe(currentContainer);
     }
+    
     return () => {
-      if (containerRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        resizeObserver.unobserve(containerRef.current);
+      if (currentContainer) {
+        resizeObserver.unobserve(currentContainer);
       }
+      resizeObserver.disconnect();
     };
   }, []);
 
-  // Set up keyboard navigation
+  // Set up keyboard navigation with useCallback for performance
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    const navigationKeys = ['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown', 'Enter', ' '];
+    
+    if (navigationKeys.includes(e.key)) {
+      e.preventDefault();
+      
+      // Next slide: Right arrow, Down arrow, Enter, Space
+      if (['ArrowRight', 'ArrowDown', 'Enter', ' '].includes(e.key) && currentPage < totalPages) {
+        router.push(`/presentations/${slug}/${currentPage + 1}`);
+      }
+      // Previous slide: Left arrow, Up arrow
+      else if (['ArrowLeft', 'ArrowUp'].includes(e.key) && currentPage > 1) {
+        router.push(`/presentations/${slug}/${currentPage - 1}`);
+      }
+    }
+  }, [currentPage, totalPages, slug, router]);
+
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (['ArrowRight', 'ArrowLeft', 'Enter', ' '].includes(e.key)) {
-        e.preventDefault();
-      }
-      if (['ArrowRight', 'Enter', ' '].includes(e.key)) {
-        if (currentPage < totalPages) {
-          router.push(`/presentations/${slug}/${currentPage + 1}`);
-        }
-      } else if (e.key === 'ArrowLeft') {
-        if (currentPage > 1) {
-          router.push(`/presentations/${slug}/${currentPage - 1}`);
-        }
-      }
-    };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentPage, totalPages, slug, router]);
+  }, [handleKeyDown]);
 
   return (
     <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-900">
@@ -105,7 +112,9 @@ export function PresentationViewer({
             srcDoc={slideContent}
             className="w-full h-full border-0"
             title={`Slide ${currentPage}`}
-            sandbox="allow-scripts"
+            sandbox="allow-scripts allow-same-origin"
+            referrerPolicy="no-referrer"
+            loading="lazy"
           />
         </div>
       </main>

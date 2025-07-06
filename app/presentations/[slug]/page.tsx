@@ -24,4 +24,5 @@ export async function generateStaticParams() {
   return presentations.map((p) => ({ slug: p.slug }));
 }
 
-export const dynamicParams = false;
+// dynamicParamsのデフォルト値はtrueなので、明示的な設定は不要
+// 開発環境では動的パラメータが許可され、静的エクスポート時は自動的に制限される
