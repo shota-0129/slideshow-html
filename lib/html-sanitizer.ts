@@ -32,7 +32,7 @@ const DANGEROUS_PATTERNS = [
   /javascript:/gi,
   /vbscript:/gi,
   /data:text\/html/gi,
-  /on\w+\s*=/gi, // Event handlers like onclick, onload, etc.
+  /\son\w+\s*=/gi, // Event handlers like onclick, onload, etc. (more specific pattern)
 ];
 
 /**
@@ -52,8 +52,8 @@ export function sanitizeHtml(html: string): string {
     sanitized = sanitized.replace(pattern, '');
   }
 
-  // Remove potentially dangerous attributes
-  sanitized = sanitized.replace(/\s(on\w+|javascript|vbscript|data-\w*)\s*=\s*["'][^"']*["']/gi, '');
+  // Remove potentially dangerous attributes (preserve data-* attributes for legitimate use)
+  sanitized = sanitized.replace(/\s(on\w+|javascript|vbscript)\s*=\s*["'][^"']*["']/gi, '');
 
   // Additional validation: log warning for disallowed tags (for monitoring)
   const tagMatches = sanitized.match(/<\/?([a-zA-Z][a-zA-Z0-9]*)/g);
