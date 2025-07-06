@@ -10,6 +10,7 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 - **UI Library**: Radix UI + Tailwind CSS 4.x
 - **Icons**: Lucide React
 - **Thumbnail Generation**: Puppeteer 22.0.0
+- **Security**: DOMPurify 3.2.6, Zod 3.25.74
 - **Build Tools**: ESLint 9.x, PostCSS, Autoprefixer
 - **Node.js**: >=18.0.0, npm >=8.0.0
 
@@ -19,7 +20,7 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 - `app/api/thumb/` - Thumbnail generation API endpoint
 - `app/presentations/[slug]/[page]/` - Dynamic presentation viewer routes
 - `components/` - React components (UI components, presentation viewer)
-- `lib/` - Utility functions (HTML sanitizer, server utils, logger)
+- `lib/` - Utility functions (DOMPurify sanitizer, server utils, structured logger, validation, security, error handling)
 - `public/` - Static assets and HTML presentation files
 - `public/[slug]/` - Individual presentation directories with HTML files
 - `scripts/` - Build and deployment scripts
@@ -48,13 +49,22 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 - **TypeScript**: Strict mode enabled, explicit return types for functions
 - **CSS**: Tailwind CSS utility classes, component-based styling
 
+## Security Architecture
+
+- **HTML Sanitization**: DOMPurify with server-side JSDOM for bulletproof XSS protection
+- **Content Security Policy**: Strict CSP with cryptographic nonces for inline scripts/styles
+- **Input Validation**: Comprehensive Zod schemas for all user inputs and API parameters
+- **Error Handling**: Structured logging with security event monitoring and safe error responses
+- **Rate Limiting**: IP-based rate limiting with configurable windows and limits
+- **Path Traversal Protection**: Multiple layers of validation for file system access
+
 ## Development Workflow
 
 - **Branch Strategy**: Feature branches from main, PR-based workflow
 - **Environment**: Development mode for local testing, production build for deployment
-- **Security**: HTML sanitization in development (permissive), strict in production
+- **Security**: Multi-layered security with environment-based validation strictness
 - **Static Generation**: Use `generateStaticParams` for pre-rendering presentation pages
-- **API Routes**: Rate limiting and input validation for all endpoints
+- **API Routes**: Comprehensive validation, rate limiting, and structured error handling
 
 ## Testing Strategy
 

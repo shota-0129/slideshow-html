@@ -2,35 +2,30 @@ import "server-only";
 import fs from 'fs';
 import path from 'path';
 import { sanitizeHtml, validateHtmlContent } from './html-sanitizer';
+import { SlugSchema, PageSchema, FilePathSchema, safeParseWithSchema } from './validation';
 
 // -----------------------------------------------------------------------------
 // Security Functions
 // -----------------------------------------------------------------------------
 
 /**
- * Validates and sanitizes a slug parameter to prevent path traversal attacks.
+ * Validates and sanitizes a slug parameter using Zod schema
  * @param slug - The slug to validate.
- * @returns true if the slug is safe, false otherwise.
- */
-function validateSlug(slug: string): boolean {
-  // Only allow alphanumeric characters, hyphens, and underscores
-  // Prevent path traversal attempts
-  return /^[a-zA-Z0-9-_]+$/.test(slug) &&
-         !slug.includes('..') &&
-         slug.length > 0 &&
-         slug.length <= 100;
-}
-
-/**
- * Sanitizes a slug by removing potentially dangerous characters.
- * @param slug - The slug to sanitize.
  * @returns A sanitized slug or null if invalid.
  */
 function sanitizeSlug(slug: string): string | null {
-  if (!validateSlug(slug)) {
-    return null;
-  }
-  return slug;
+  const validation = safeParseWithSchema(SlugSchema, slug);
+  return validation.success ? validation.data : null;
+}
+
+/**
+ * Validates page number using Zod schema
+ * @param page - The page number to validate
+ * @returns The validated page number or null if invalid
+ */
+function validatePageNumber(page: number): number | null {
+  const validation = safeParseWithSchema(PageSchema, page);
+  return validation.success ? validation.data : null;
 }
 
 // -----------------------------------------------------------------------------
@@ -173,15 +168,16 @@ export function getAllPresentations(): Array<{ slug:string; totalPages: number }
  */
 export const getSlideContent = (slug: string, page: number): string | null => {
   try {
-    // Validate and sanitize the slug
+    // Validate and sanitize the slug using Zod
     const sanitizedSlug = sanitizeSlug(slug);
     if (!sanitizedSlug) {
       console.warn(`Invalid slug provided: "${slug}"`);
       return null;
     }
 
-    // Validate page number
-    if (!Number.isInteger(page) || page < 1 || page > 1000) {
+    // Validate page number using Zod
+    const validatedPage = validatePageNumber(page);
+    if (validatedPage === null) {
       console.warn(`Invalid page number: ${page}`);
       return null;
     }
@@ -199,8 +195,8 @@ export const getSlideContent = (slug: string, page: number): string | null => {
     const allHtmlFiles = getSortedHtmlFilePaths(presentationPath);
     
     // Check if the requested page is within the valid range
-    if (page > 0 && page <= allHtmlFiles.length) {
-        const filePath = allHtmlFiles[page - 1]; // Convert 1-based page to 0-based index
+    if (validatedPage > 0 && validatedPage <= allHtmlFiles.length) {
+        const filePath = allHtmlFiles[validatedPage - 1]; // Convert 1-based page to 0-based index
         if (filePath) {
           // Additional security check for the file path
           const resolvedFilePath = path.resolve(filePath);

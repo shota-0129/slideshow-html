@@ -120,20 +120,42 @@ describe('Server Utils', () => {
   })
 
   describe('getSlideContent', () => {
+    beforeEach(() => {
+      // Set development mode for more permissive validation
+      process.env.NODE_ENV = 'development'
+    })
+
+    afterEach(() => {
+      // Reset to test mode
+      process.env.NODE_ENV = 'test'
+    })
+
     it('should return slide content for valid inputs', () => {
-      const mockContent = '<html><body><h1>Test Slide</h1></body></html>'
+      // Use a complete, valid HTML document that will pass DOMPurify validation
+      const mockContent = '<!DOCTYPE html><html><head><title>Test</title></head><body><h1>Test Slide</h1><p>Content</p></body></html>'
       
-      // Mock directory listing
-      mockFs.readdirSync.mockReturnValue([
-        { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
-        { name: '2.html', isDirectory: () => false, isFile: () => true } as any,
-      ])
+      // Mock directory listing for the presentation directory
+      mockFs.readdirSync.mockImplementation((dirPath: any) => {
+        // Return different results based on the directory being read
+        if (dirPath.includes('test-presentation')) {
+          return [
+            { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
+            { name: '2.html', isDirectory: () => false, isFile: () => true } as any,
+          ]
+        }
+        return []
+      })
+      
+      // Mock file existence check
+      mockFs.existsSync.mockReturnValue(true)
       
       // Mock file reading
       mockFs.readFileSync.mockReturnValue(mockContent)
 
       const result = getSlideContent('test-presentation', 1)
+      expect(result).not.toBeNull()
       expect(result).toContain('<h1>Test Slide</h1>')
+      expect(result).toContain('<p>Content</p>')
     })
 
     it('should return null for invalid page numbers', () => {

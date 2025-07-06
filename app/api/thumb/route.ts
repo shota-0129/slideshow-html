@@ -3,54 +3,58 @@ import puppeteer from "puppeteer";
 import path from "path";
 import fs from "fs";
 import { getPresentationData } from "@/lib/server-utils";
-import logger from "@/lib/logger";
+import logger, { LogContext } from "@/lib/logger";
 import { checkRateLimit } from "@/lib/rate-limiter";
-
-/**
- * Validates slug parameter to prevent path traversal
- */
-function validateSlug(slug: string): boolean {
-  return /^[a-zA-Z0-9-_]+$/.test(slug) &&
-         !slug.includes('..') &&
-         slug.length > 0 &&
-         slug.length <= 100;
-}
+import { validateRequestParams, IPAddressSchema, safeParseWithSchema } from "@/lib/validation";
+import { 
+  ErrorHandler, 
+  throwRateLimitError, 
+  throwNotFoundError, 
+  ValidationError,
+  SecurityError
+} from "@/lib/error-handler";
 
 export async function GET(request: NextRequest) {
+  try {
+    // Create request context for logging
+    const requestContext: LogContext = {
+      path: request.nextUrl.pathname,
+      method: request.method,
+      ip: request.headers.get('x-forwarded-for') || 'unknown',
+      userAgent: request.headers.get('user-agent')?.substring(0, 100) || 'unknown'
+    };
+
+    // Enhanced IP validation with Zod
+    const rawIp = request.headers.get('x-forwarded-for') ||
+                  request.headers.get('x-real-ip') ||
+                  'unknown';
+    
+    const ipValidation = safeParseWithSchema(IPAddressSchema, rawIp);
+    const ip = ipValidation.success ? ipValidation.data : 'unknown';
+    requestContext.ip = ip;
+    
     // Rate limiting
-    const ip = request.headers.get('x-forwarded-for') ||
-              request.headers.get('x-real-ip') ||
-              'unknown';
     if (!checkRateLimit(ip)) {
-      return new Response("Too many requests", { status: 429 });
+      throwRateLimitError();
     }
 
-    const searchParams = request.nextUrl.searchParams;
-    const slug = searchParams.get("slug");
-    const page = searchParams.get("page");
-
-    if (!slug || !page) {
-      return new Response("Missing slug or page parameter", { status: 400 });
+    // Comprehensive parameter validation with Zod
+    const paramsValidation = validateRequestParams(request.nextUrl.searchParams);
+    if (!paramsValidation.success) {
+      throw new ValidationError(paramsValidation.error);
     }
 
-    // Validate slug to prevent path traversal
-    if (!validateSlug(slug)) {
-      logger.warn(`Invalid slug provided: "${slug}" from IP: ${ip}`);
-      return new Response("Invalid slug parameter", { status: 400 });
-    }
-
-    const pageNum = parseInt(page, 10);
-    if (isNaN(pageNum) || pageNum < 1 || pageNum > 1000) {
-      return new Response("Invalid page number", { status: 400 });
-    }
+    const { slug, page: pageNum } = paramsValidation.data;
+    requestContext.slug = slug;
+    requestContext.page = pageNum;
 
     const { totalPages } = getPresentationData(slug);
     if (totalPages === 0) {
-      return new Response("Presentation not found", { status: 404 });
+      throwNotFoundError("Presentation not found");
     }
     
     if (pageNum > totalPages) {
-      return new Response("Page number out of range", { status: 400 });
+      throw new ValidationError("Page number out of range");
     }
 
     // Secure path construction with additional validation
@@ -60,12 +64,11 @@ export async function GET(request: NextRequest) {
     // Ensure the resolved path is within the public directory
     const resolvedPath = path.resolve(htmlFilePath);
     if (!resolvedPath.startsWith(path.resolve(publicDir))) {
-      logger.warn(`Path traversal attempt detected: "${slug}" from IP: ${ip}`);
-      return new Response("Invalid file path", { status: 400 });
+      throw new SecurityError("Path traversal attempt detected", requestContext);
     }
 
     if (!fs.existsSync(htmlFilePath)) {
-      return new Response("Slide not found", { status: 404 });
+      throwNotFoundError("Slide not found");
     }
 
     // Generate thumbnail using puppeteer with configurable settings
@@ -150,6 +153,13 @@ export async function GET(request: NextRequest) {
         await browser.close().catch(() => {});
       }
     }
+  } catch (error) {
+    // Handle all errors using the structured error handler
+    return await ErrorHandler.handleRouteError(
+      error instanceof Error ? error : new Error(String(error)),
+      request
+    );
+  }
 }
 
 // Static export configuration

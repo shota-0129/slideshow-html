@@ -104,7 +104,7 @@ describe('/api/thumb', () => {
       const response = await GET(request)
       
       expect(response.status).toBe(400)
-      expect(await response.text()).toBe('Invalid slug parameter')
+      expect(await response.text()).toBe('Invalid request parameters')
     })
 
     it('should return 400 for invalid page number', async () => {
@@ -112,7 +112,7 @@ describe('/api/thumb', () => {
       const response = await GET(request)
       
       expect(response.status).toBe(400)
-      expect(await response.text()).toBe('Invalid page number')
+      expect(await response.text()).toBe('Invalid request parameters')
     })
 
     it('should return 400 for negative page number', async () => {
@@ -120,7 +120,7 @@ describe('/api/thumb', () => {
       const response = await GET(request)
       
       expect(response.status).toBe(400)
-      expect(await response.text()).toBe('Invalid page number')
+      expect(await response.text()).toBe('Invalid request parameters')
     })
 
     it('should return 400 for page number exceeding limit', async () => {
@@ -128,7 +128,7 @@ describe('/api/thumb', () => {
       const response = await GET(request)
       
       expect(response.status).toBe(400)
-      expect(await response.text()).toBe('Invalid page number')
+      expect(await response.text()).toBe('Invalid request parameters')
     })
   })
 

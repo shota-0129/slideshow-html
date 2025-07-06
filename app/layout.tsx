@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { generateNonce, generateSecurityHeaders } from "@/lib/security";
+import { SecurityProvider } from "@/components/security-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,16 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Generate nonce for this request
+const nonce = generateNonce();
+
 export const metadata: Metadata = {
   title: "HTML Slideshow Viewer",
   description: "A Next.js application for viewing HTML slideshows",
-  other: {
-    'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';",
-    'X-Frame-Options': 'DENY',
-    'X-Content-Type-Options': 'nosniff',
-    'Referrer-Policy': 'strict-origin-when-cross-origin',
-    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-  },
+  other: generateSecurityHeaders(nonce),
 };
 
 export default function RootLayout({
@@ -39,7 +38,9 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        {children}
+        <SecurityProvider nonce={nonce}>
+          {children}
+        </SecurityProvider>
       </body>
     </html>
   );

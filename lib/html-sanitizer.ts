@@ -1,42 +1,38 @@
 import "server-only";
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
-/**
- * Basic HTML sanitization for slide content
- * This is a simple implementation - for production, consider using DOMPurify
- */
+// Initialize JSDOM window for server-side DOMPurify
+const window = new JSDOM('').window;
+const purify = DOMPurify(window as unknown as Window);
 
+// Configure allowed tags for presentation content
 const ALLOWED_TAGS = [
   'html', 'head', 'body', 'title', 'meta', 'link', 'style',
   'div', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
   'ul', 'ol', 'li', 'br', 'hr', 'img', 'a', 'strong', 'em',
   'code', 'pre', 'blockquote', 'table', 'tr', 'td', 'th',
   'thead', 'tbody', 'tfoot', 'section', 'article', 'header',
-  'footer', 'nav', 'aside', 'main'
+  'footer', 'nav', 'aside', 'main', 'figure', 'figcaption',
+  'time', 'mark', 'small', 'sub', 'sup', 'del', 'ins'
+];
+
+// Configure allowed attributes
+const ALLOWED_ATTR = [
+  'class', 'id', 'style', 'title', 'alt', 'src', 'href', 'target',
+  'width', 'height', 'colspan', 'rowspan', 'data-*', 'aria-*',
+  'role', 'lang', 'dir'
+];
+
+// Configure forbidden tags that should never be allowed
+const FORBIDDEN_TAGS = [
+  'script', 'object', 'embed', 'form', 'input', 'button', 
+  'textarea', 'select', 'option', 'iframe', 'frame', 'frameset',
+  'applet', 'base', 'meta[http-equiv]'
 ];
 
 /**
- * Checks if a tag is in the allowed list
- * @param tagName - The tag name to check
- * @returns true if the tag is allowed, false otherwise
- */
-function isAllowedTag(tagName: string): boolean {
-  return ALLOWED_TAGS.includes(tagName.toLowerCase());
-}
-
-const DANGEROUS_PATTERNS = [
-  /<script[\s\S]*?<\/script>/gi,
-  /<iframe[\s\S]*?<\/iframe>/gi,
-  /<object[\s\S]*?<\/object>/gi,
-  /<embed[\s\S]*?>/gi,
-  /<form[\s\S]*?<\/form>/gi,
-  /javascript:/gi,
-  /vbscript:/gi,
-  /data:text\/html/gi,
-  /\son\w+\s*=/gi, // Event handlers like onclick, onload, etc. (more specific pattern)
-];
-
-/**
- * Basic sanitization of HTML content
+ * Enhanced HTML sanitization using DOMPurify
  * @param html - The HTML content to sanitize
  * @returns Sanitized HTML content
  */
@@ -45,39 +41,49 @@ export function sanitizeHtml(html: string): string {
     return '';
   }
 
-  let sanitized = html;
-
-  // Remove dangerous patterns
-  for (const pattern of DANGEROUS_PATTERNS) {
-    sanitized = sanitized.replace(pattern, '');
-  }
-
-  // Remove potentially dangerous attributes (preserve data-* attributes for legitimate use)
-  sanitized = sanitized.replace(/\s(on\w+|javascript|vbscript)\s*=\s*["'][^"']*["']/gi, '');
-
-  // Additional validation: log warning for disallowed tags (for monitoring)
-  const tagMatches = sanitized.match(/<\/?([a-zA-Z][a-zA-Z0-9]*)/g);
-  if (tagMatches) {
-    const disallowedTags = tagMatches
-      .map(tag => tag.replace(/[<>/]/g, '').toLowerCase())
-      .filter(tagName => !isAllowedTag(tagName));
-    
-    if (disallowedTags.length > 0 && process.env.NODE_ENV === 'development') {
-      console.warn('Potentially disallowed HTML tags found:', [...new Set(disallowedTags)]);
-    }
-  }
-
-  // Limit HTML size to prevent DoS
-  if (sanitized.length > 1024 * 1024) { // 1MB limit
+  // Size limit check before processing to prevent DoS
+  if (html.length > 1024 * 1024) { // 1MB limit
     console.warn('HTML content too large, truncating');
-    sanitized = sanitized.substring(0, 1024 * 1024);
+    html = html.substring(0, 1024 * 1024);
   }
 
-  return sanitized;
+  try {
+    // Configure DOMPurify for presentation content
+    const sanitized = purify.sanitize(html, {
+      WHOLE_DOCUMENT: true,
+      ALLOWED_TAGS: ALLOWED_TAGS,
+      ALLOWED_ATTR: ALLOWED_ATTR,
+      FORBID_TAGS: FORBIDDEN_TAGS,
+      FORBID_ATTR: ['on*'], // Block all event handlers
+      ALLOW_DATA_ATTR: true,
+      ALLOW_ARIA_ATTR: true,
+      USE_PROFILES: { html: true },
+      // Security configurations
+      SANITIZE_DOM: true,
+      SANITIZE_NAMED_PROPS: true,
+      KEEP_CONTENT: false, // Don't keep content of forbidden elements
+      // Custom URL validation
+      ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i
+    });
+
+    // Additional validation in development mode
+    if (process.env.NODE_ENV === 'development') {
+      const removedElements = html.length - sanitized.length;
+      if (removedElements > 100) { // Significant content removed
+        console.warn(`DOMPurify removed ${removedElements} characters from HTML content`);
+      }
+    }
+
+    return sanitized;
+  } catch (error) {
+    console.error('HTML sanitization failed:', error);
+    // Fallback to empty string on error to maintain security
+    return '';
+  }
 }
 
 /**
- * Validates if HTML content is safe for display
+ * Validates if HTML content is safe for display using DOMPurify
  * @param html - The HTML content to validate
  * @returns true if content appears safe, false otherwise
  */
@@ -86,26 +92,42 @@ export function validateHtmlContent(html: string): boolean {
     return false;
   }
 
-  // In development mode, be more permissive and only warn
-  const isDevelopment = process.env.NODE_ENV === 'development';
-
-  // Check for suspicious patterns
-  for (const pattern of DANGEROUS_PATTERNS) {
-    if (pattern.test(html)) {
-      if (isDevelopment) {
-        console.warn('Potentially dangerous HTML pattern detected, but allowing in development mode');
-        continue; // Allow in development
-      }
-      return false; // Reject in production
-    }
-  }
-
-  // Check for excessive nesting (potential DoS)
-  const nestingLevel = (html.match(/<[^\/]/g) || []).length;
-  if (nestingLevel > 1000) {
-    console.warn('Excessive HTML nesting detected');
+  // Size limit check
+  if (html.length > 1024 * 1024) { // 1MB limit
+    console.warn('HTML content too large');
     return false;
   }
 
-  return true;
+  try {
+    // Use DOMPurify to test sanitization
+    const sanitized = purify.sanitize(html, {
+      WHOLE_DOCUMENT: true,
+      ALLOWED_TAGS: ALLOWED_TAGS,
+      ALLOWED_ATTR: ALLOWED_ATTR,
+      FORBID_TAGS: FORBIDDEN_TAGS,
+      FORBID_ATTR: ['on*'],
+      DRY_RUN: true // Don't actually sanitize, just validate
+    });
+
+    // Check for excessive nesting (potential DoS)
+    const nestingLevel = (html.match(/<[^\/]/g) || []).length;
+    if (nestingLevel > 1000) {
+      console.warn('Excessive HTML nesting detected');
+      return false;
+    }
+
+    // In development mode, be more permissive but warn about removed content
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    if (isDevelopment && sanitized !== html) {
+      const removedContent = html.length - sanitized.length;
+      console.warn(`Potentially dangerous HTML detected. ${removedContent} characters would be removed by sanitization.`);
+      return true; // Allow in development with warning
+    }
+
+    // In production, content must match sanitized version exactly
+    return sanitized === html || isDevelopment;
+  } catch (error) {
+    console.error('HTML validation failed:', error);
+    return false;
+  }
 }
