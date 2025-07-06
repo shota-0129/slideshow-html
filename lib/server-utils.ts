@@ -207,7 +207,20 @@ export const getSlideContent = (slug: string, page: number): string | null => {
           
           const rawContent = fs.readFileSync(filePath, 'utf-8');
           
-          // Validate and sanitize HTML content
+          // Check environment variable for JavaScript mode
+          const allowJavaScript = process.env.ALLOW_JAVASCRIPT === 'true';
+          
+          if (allowJavaScript) {
+            console.log(`JavaScript mode enabled - preserving all content for ${sanitizedSlug}/${validatedPage}.html`);
+            // Basic size validation only
+            if (rawContent.length > 2 * 1024 * 1024) { // 2MB limit
+              console.warn(`File too large: ${filePath}`);
+              return null;
+            }
+            return rawContent;
+          }
+          
+          // Validate and sanitize HTML content when JavaScript mode is disabled
           if (!validateHtmlContent(rawContent)) {
             console.warn(`Potentially dangerous HTML content detected in: "${filePath}"`);
             return null;
