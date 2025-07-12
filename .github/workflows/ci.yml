@@ -56,6 +56,9 @@ jobs:
       
     - name: Test static export
       run: npm run build:static
+      env:
+        STATIC_EXPORT: true
+        NEXT_PUBLIC_BASE_PATH: /slideshow-html
 
   security:
     runs-on: ubuntu-latest
@@ -115,6 +118,9 @@ jobs:
       
     - name: Build static export
       run: npm run build:static
+      env:
+        STATIC_EXPORT: true
+        NEXT_PUBLIC_BASE_PATH: /slideshow-html
       
     - name: Deploy to GitHub Pages (Preview)
       uses: peaceiris/actions-gh-pages@v4
@@ -149,6 +155,9 @@ jobs:
       
     - name: Build static export
       run: npm run build:static
+      env:
+        STATIC_EXPORT: true
+        NEXT_PUBLIC_BASE_PATH: /slideshow-html
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
