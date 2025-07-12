@@ -121,6 +121,9 @@ jobs:
       env:
         STATIC_EXPORT: true
         NEXT_PUBLIC_BASE_PATH: /slideshow-html
+    
+    - name: Add .nojekyll file (ensure Jekyll is disabled)
+      run: touch out/.nojekyll
       
     - name: Deploy to GitHub Pages (Preview)
       uses: peaceiris/actions-gh-pages@v4
@@ -158,6 +161,9 @@ jobs:
       env:
         STATIC_EXPORT: true
         NEXT_PUBLIC_BASE_PATH: /slideshow-html
+    
+    - name: Add .nojekyll file (ensure Jekyll is disabled)
+      run: touch out/.nojekyll
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
