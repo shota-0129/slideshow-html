@@ -33,7 +33,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:static": "cross-env STATIC_EXPORT=true NEXT_PUBLIC_STATIC_EXPORT=true next build && tsx scripts/generate-thumbnails-post.ts",
+    "build:static": "cross-env STATIC_EXPORT=true NEXT_PUBLIC_STATIC_EXPORT=true next build && tsx scripts/generate-thumbnails-post.ts && touch out/.nojekyll",
     "preview:static": "npx serve -l 5000 out",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
