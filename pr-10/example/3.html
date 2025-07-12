@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow チュートリアル - Presentationの追加</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .slide {
+      width: min(1400px, 95vw);
+      aspect-ratio: 16/9;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      padding: 4% 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #a8edea, #fed6e3);
+      border-radius: 20px 20px 0 0;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    
+    .subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      color: #4a5568;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .step {
+      background: #f7fafc;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-top: 4px solid #38b2ac;
+      text-align: center;
+    }
+    
+    .step-number {
+      background: #38b2ac;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .step h3 {
+      font-size: 1.1rem;
+      color: #2d3748;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .step p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    
+    .file-structure {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+      font-size: 0.8rem;
+      text-align: left;
+      margin: 1rem 0;
+      line-height: 1.4;
+    }
+    
+    code {
+      background: #edf2f7;
+      color: #2d3748;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+      font-size: 0.85em;
+    }
+    
+    .navigation-hint {
+      font-size: 1rem;
+      color: #38b2ac;
+      font-weight: 600;
+      background: #e6fffa;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+    }
+    
+    @media (max-width: 768px) {
+      .slide {
+        padding: 3% 4%;
+      }
+      
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .step {
+        padding: 1rem;
+      }
+      
+      .file-structure {
+        font-size: 0.7rem;
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>あなたのPresentationを追加</h1>
+    <p class="subtitle">簡単な3ステップで独自のslideshowを作成</p>
+    
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Directory作成</h3>
+        <p><code>public/あなたの名前/</code>にfolderを作成</p>
+        <div class="file-structure">public/あなたの名前/<br>├── 1.html<br>├── 2.html<br>└── 3.html</div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>HTML Slide作成</h3>
+        <p>各slide = 1つのHTML file</p>
+        <p>ファイル名: <code>1.html</code>, <code>2.html</code>, など</p>
+        <p>既存の例をcopyしてカスタマイズ！</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>表示 & 共有</h3>
+        <p>アクセス先:</p>
+        <p><code>/presentations/あなたの名前/1</code></p>
+        <p>あなたのslideshowの完成！</p>
+      </div>
+    </div>
+    
+    <div class="navigation-hint">buildとdeploymentについて学ぼう →</div>
+  </div>
+</body>
+</html>
