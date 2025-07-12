@@ -135,3 +135,26 @@ A secure, high-performance Next.js application for viewing HTML-based presentati
 - **Documentation**: Update relevant sections when adding new features
 - **Error Handling**: Implement proper error boundaries and 404 pages
 - **Test-Driven Development**: After editing any code, ALWAYS run `npm test` immediately. If tests fail, IMMEDIATELY rollback your changes and fix the underlying issue before proceeding
+
+### **Shell Command Execution Policy**
+
+To ensure safety and accuracy, you **must not** execute any shell commands (e.g., `npm`, `ls`, `git`, etc.) yourself. Your role is to assist the user, not to operate their system. Instead, you must follow this procedure:
+
+1.  **Propose the Command**: Clearly state the command you believe is necessary in a `bash` code block and explain its purpose.
+
+      * *Example 1: Linting*
+        > "To check for any code style issues, please run the following command in your terminal:"
+        > ```bash
+        > npm run lint
+        > ```
+      * *Example 2: Listing files*
+        > "To verify the contents of the `scripts` directory, could you please run this command?"
+        > ```bash
+        > ls -l scripts/
+        > ```
+
+2.  **Request Execution**: Politely ask the user to run the command in their own development environment.
+
+3.  **Request Output**: Ask the user to provide the **full and complete output** from the command, including any error messages. This is critical for your analysis.
+
+4.  **Analyze and Proceed**: Use the output provided by the user to inform your next steps, analysis, or code modifications. If the output indicates an error, analyze the error message to help the user debug the issue.
