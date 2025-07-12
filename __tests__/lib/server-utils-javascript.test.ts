@@ -17,9 +17,6 @@ jest.mock('path', () => ({
 }));
 const mockPath = path as jest.Mocked<typeof path>;
 
-// Import actual html-sanitizer instead of unsafe mock
-import { validateHtmlContent, sanitizeHtml } from '@/lib/html-sanitizer';
-
 // Mock html-sanitizer functions to test different scenarios
 jest.mock('@/lib/html-sanitizer', () => {
   const actual = jest.requireActual('@/lib/html-sanitizer');
@@ -32,6 +29,7 @@ jest.mock('@/lib/html-sanitizer', () => {
   };
 });
 
+// Import mocked functions after setting up the mock
 import { validateHtmlContent, sanitizeHtml } from '@/lib/html-sanitizer';
 const mockValidateHtmlContent = validateHtmlContent as jest.MockedFunction<typeof validateHtmlContent>;
 const mockSanitizeHtml = sanitizeHtml as jest.MockedFunction<typeof sanitizeHtml>;
