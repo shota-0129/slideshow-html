@@ -7,7 +7,7 @@ const isStatic = process.env.STATIC_EXPORT === "true";
 const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 
 // リポジトリ名（GitHub Pagesのサブパスになる部分）
-const repo = 'slideshow-html';
+const repo = 'html-slideshow';
 
 const nextConfig = {
   /**

@@ -57,8 +57,9 @@ jobs:
     - name: Test static export
       run: npm run build:static
       env:
+        ALLOW_JAVASCRIPT: true
         STATIC_EXPORT: true
-        NEXT_PUBLIC_BASE_PATH: /slideshow-html
+        NEXT_PUBLIC_BASE_PATH: /html-slideshow
 
   security:
     runs-on: ubuntu-latest
@@ -119,8 +120,9 @@ jobs:
     - name: Build static export
       run: npm run build:static
       env:
+        ALLOW_JAVASCRIPT: true
         STATIC_EXPORT: true
-        NEXT_PUBLIC_BASE_PATH: /slideshow-html
+        NEXT_PUBLIC_BASE_PATH: /html-slideshow
     
     - name: Add .nojekyll file (ensure Jekyll is disabled)
       run: touch out/.nojekyll
@@ -159,8 +161,9 @@ jobs:
     - name: Build static export
       run: npm run build:static
       env:
+        ALLOW_JAVASCRIPT: true
         STATIC_EXPORT: true
-        NEXT_PUBLIC_BASE_PATH: /slideshow-html
+        NEXT_PUBLIC_BASE_PATH: /html-slideshow
     
     - name: Add .nojekyll file (ensure Jekyll is disabled)
       run: touch out/.nojekyll
