@@ -10,8 +10,9 @@ import {
   ValidationError
 } from "@/lib/error-handler";
 
-// Static export compatibility - only force static in production static builds
-export const dynamic = process.env.STATIC_EXPORT === 'true' ? 'force-static' : 'auto';
+// Static export compatibility
+// Note: Next.js doesn't support conditional exports, so we need to handle this differently
+export const dynamic = 'auto';
 export const revalidate = false;
 
 export async function GET(request: NextRequest) {
