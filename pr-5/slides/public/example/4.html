@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow チュートリアル - Build & Deployment</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .slide {
+      width: min(1400px, 95vw);
+      aspect-ratio: 16/9;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      padding: 4% 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #ffecd2, #fcb69f);
+      border-radius: 20px 20px 0 0;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    
+    .subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      color: #4a5568;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    
+    .commands-section {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .commands {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .command {
+      background: #2d3748;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    
+    .command-desc {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    .deployment-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .option {
+      background: #f7fafc;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+      border: 2px solid #e2e8f0;
+    }
+    
+    .option-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .option h3 {
+      font-size: 1.2rem;
+      color: #2d3748;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .option p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    
+    code {
+      background: #edf2f7;
+      color: #2d3748;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+      font-size: 0.85em;
+    }
+    
+    .completion {
+      font-size: 1.1rem;
+      color: #38a169;
+      font-weight: 600;
+      background: #f0fff4;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      border: 2px solid #9ae6b4;
+    }
+    
+    @media (max-width: 768px) {
+      .slide {
+        padding: 3% 4%;
+      }
+      
+      .commands {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+      
+      .command {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.8rem;
+      }
+      
+      .deployment-options {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .option {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>Build & Deployment</h1>
+    <p class="subtitle">あなたのslideshowを本番環境用に準備</p>
+    
+    <div class="commands-section">
+      <div class="commands">
+        <div class="command">
+          <code>npm run dev</code>
+          <span class="command-desc">開発環境</span>
+        </div>
+        <div class="command">
+          <code>npm run build</code>
+          <span class="command-desc">本番用build</span>
+        </div>
+        <div class="command">
+          <code>npm run build:static</code>
+          <span class="command-desc">Static export</span>
+        </div>
+        <div class="command">
+          <code>npm run preview:static</code>
+          <span class="command-desc">Buildプレビュー</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="deployment-options">
+      <div class="option">
+        <span class="option-icon">🌐</span>
+        <h3>Static Deployment</h3>
+        <p><code>npm run build:static</code>を使用</p>
+        <p><code>out/</code> folderをCDNにdeploy</p>
+        <p>GitHub Pages, Netlifyに最適</p>
+      </div>
+      
+      <div class="option">
+        <span class="option-icon">⚡</span>
+        <h3>Server Deployment</h3>
+        <p><code>npm run build && npm start</code>を使用</p>
+        <p>Vercel, Railwayなどにdeploy</p>
+        <p>Server-side rendering対応</p>
+      </div>
+    </div>
+    
+    <div class="completion">🎉 これで素晴らしいslideshowを作成する準備が整いました！</div>
+  </div>
+</body>
+</html>
