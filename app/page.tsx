@@ -11,6 +11,7 @@ import { SlugSchema, safeParseWithSchema } from "@/lib/validation";
 export default function Home() {
   const presentations = getAllPresentations();
   const isStatic = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   return (
     <div className="container mx-auto py-10">
@@ -40,7 +41,7 @@ export default function Home() {
                   <Image
                     src={
                       isStatic
-                         ? `/thumb/${encodeURIComponent(safeSlug)}/1.jpg`                     
+                         ? `${basePath}/thumb/${encodeURIComponent(safeSlug)}/1.jpg`                     
                          : `/api/thumb?slug=${encodeURIComponent(safeSlug)}&page=1`
                     }
                     alt={`${safeSlug} preview`}
