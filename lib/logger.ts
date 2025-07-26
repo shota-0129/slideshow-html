@@ -129,7 +129,7 @@ const logger = new StructuredLogger();
 
 // Global declaration for compatibility
 declare global {
-  // eslint-disable-next-line no-var
+   
   var logger: Logger;
 }
 
