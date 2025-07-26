@@ -46,12 +46,22 @@ export async function generateThumbnail(
     }
 
     // Secure path construction with additional validation
-    const publicDir = path.join(process.cwd(), "public");
-    const htmlFilePath = path.join(publicDir, slug, `${pageNum}.html`);
+    const slidesDir = path.join(process.cwd(), "public", "slides");
+    const publicSlidesPath = path.join(slidesDir, "public", slug, `${pageNum}.html`);
+    const privateSlidesPath = path.join(slidesDir, "private", slug, `${pageNum}.html`);
     
-    // Ensure the resolved path is within the public directory
+    let htmlFilePath: string;
+    if (fs.existsSync(publicSlidesPath)) {
+      htmlFilePath = publicSlidesPath;
+    } else if (fs.existsSync(privateSlidesPath)) {
+      htmlFilePath = privateSlidesPath;
+    } else {
+      return { success: false, error: "Slide not found" };
+    }
+    
+    // Ensure the resolved path is within the slides directory
     const resolvedPath = path.resolve(htmlFilePath);
-    if (!resolvedPath.startsWith(path.resolve(publicDir))) {
+    if (!resolvedPath.startsWith(path.resolve(slidesDir))) {
       throw new SecurityError("Path traversal attempt detected", requestContext);
     }
 
@@ -130,16 +140,31 @@ export async function generateAllThumbnails(
   outputDir: string = path.join(process.cwd(), "public", "thumb"),
   options: ThumbnailOptions = {}
 ): Promise<{ success: number; failed: number; errors: string[] }> {
-  const publicDir = path.join(process.cwd(), "public");
-  const presentationDirs = fs.readdirSync(publicDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory() && dirent.name !== 'thumb')
-    .map(dirent => dirent.name);
+  const presentationSlugs: string[] = [];
+  
+  // Get presentations from public slides
+  const publicSlidesDir = path.join(process.cwd(), "public", "slides", "public");
+  if (fs.existsSync(publicSlidesDir)) {
+    const publicDirs = fs.readdirSync(publicSlidesDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name);
+    presentationSlugs.push(...publicDirs);
+  }
+  
+  // Get presentations from private slides
+  const privateSlidesDir = path.join(process.cwd(), "public", "slides", "private");
+  if (fs.existsSync(privateSlidesDir)) {
+    const privateDirs = fs.readdirSync(privateSlidesDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name);
+    presentationSlugs.push(...privateDirs);
+  }
 
   let success = 0;
   let failed = 0;
   const errors: string[] = [];
 
-  for (const slug of presentationDirs) {
+  for (const slug of presentationSlugs) {
     try {
       const { totalPages } = getPresentationData(slug);
       

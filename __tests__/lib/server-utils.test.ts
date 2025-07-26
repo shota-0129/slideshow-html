@@ -25,6 +25,10 @@ describe('Server Utils', () => {
   describe('getPresentationData', () => {
     it('should return correct page count for valid presentation', () => {
       // Mock directory structure
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        return String(path).includes('/public/slides/public/test-presentation')
+      })
+      
       mockFs.readdirSync.mockReturnValue([
         { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
         { name: '2.html', isDirectory: () => false, isFile: () => true } as any,
@@ -36,10 +40,8 @@ describe('Server Utils', () => {
     })
 
     it('should return 0 pages for non-existent presentation', () => {
-      mockFs.readdirSync.mockImplementation(() => {
-        throw new Error('ENOENT: no such file or directory')
-      })
-
+      mockFs.existsSync.mockReturnValue(false)
+      
       const result = getPresentationData('non-existent')
       expect(result.totalPages).toBe(0)
     })
@@ -60,6 +62,10 @@ describe('Server Utils', () => {
     })
 
     it('should filter out non-HTML files', () => {
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        return String(path).includes('/public/slides/public/test-presentation')
+      })
+      
       mockFs.readdirSync.mockReturnValue([
         { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
         { name: '2.txt', isDirectory: () => false, isFile: () => true } as any,
@@ -75,22 +81,39 @@ describe('Server Utils', () => {
 
   describe('getAllPresentations', () => {
     it('should return list of presentations with page counts', () => {
+      // Mock existence of public slides directory
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        const pathStr = String(path)
+        if (pathStr.includes('/public/slides/public')) return true
+        if (pathStr.includes('/public/slides/private')) return false
+        if (pathStr.includes('/public/slides/public/presentation1')) return true
+        if (pathStr.includes('/public/slides/public/presentation2')) return true
+        return false
+      })
+      
       // Mock public directory listing
-      mockFs.readdirSync.mockReturnValueOnce([
-        { name: 'presentation1', isDirectory: () => true } as any,
-        { name: 'presentation2', isDirectory: () => true } as any,
-        { name: 'file.txt', isDirectory: () => false } as any, // Should be ignored
-      ])
-
-      // Mock individual presentation directories
-      mockFs.readdirSync
-        .mockReturnValueOnce([ // presentation1
-          { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
-          { name: '2.html', isDirectory: () => false, isFile: () => true } as any,
-        ])
-        .mockReturnValueOnce([ // presentation2
-          { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
-        ])
+      mockFs.readdirSync.mockImplementation((path: fs.PathLike) => {
+        const pathStr = String(path)
+        if (pathStr.endsWith('/public/slides/public')) {
+          return [
+            { name: 'presentation1', isDirectory: () => true } as any,
+            { name: 'presentation2', isDirectory: () => true } as any,
+            { name: 'file.txt', isDirectory: () => false } as any, // Should be ignored
+          ]
+        }
+        if (pathStr.includes('presentation1')) {
+          return [
+            { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
+            { name: '2.html', isDirectory: () => false, isFile: () => true } as any,
+          ]
+        }
+        if (pathStr.includes('presentation2')) {
+          return [
+            { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
+          ]
+        }
+        return []
+      })
 
       const result = getAllPresentations()
       expect(result).toHaveLength(2)
@@ -99,19 +122,33 @@ describe('Server Utils', () => {
     })
 
     it('should filter out presentations with 0 pages', () => {
-      mockFs.readdirSync.mockReturnValueOnce([
-        { name: 'valid-presentation', isDirectory: () => true } as any,
-        { name: 'empty-presentation', isDirectory: () => true } as any,
-      ])
-
-      // Mock: valid presentation has files, empty doesn't
-      mockFs.readdirSync
-        .mockReturnValueOnce([
-          { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
-        ])
-        .mockImplementationOnce(() => {
-          throw new Error('ENOENT')
-        })
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        const pathStr = String(path)
+        if (pathStr.includes('/public/slides/public')) return true
+        if (pathStr.includes('/public/slides/private')) return false
+        if (pathStr.includes('/public/slides/public/valid-presentation')) return true
+        if (pathStr.includes('/public/slides/public/empty-presentation')) return true
+        return false
+      })
+      
+      mockFs.readdirSync.mockImplementation((path: fs.PathLike) => {
+        const pathStr = String(path)
+        if (pathStr.endsWith('/public/slides/public')) {
+          return [
+            { name: 'valid-presentation', isDirectory: () => true } as any,
+            { name: 'empty-presentation', isDirectory: () => true } as any,
+          ]
+        }
+        if (pathStr.includes('valid-presentation')) {
+          return [
+            { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
+          ]
+        }
+        if (pathStr.includes('empty-presentation')) {
+          return [] // Empty directory
+        }
+        return []
+      })
 
       const result = getAllPresentations()
       expect(result).toHaveLength(1)
@@ -134,6 +171,11 @@ describe('Server Utils', () => {
       // Use a complete, valid HTML document that will pass DOMPurify validation
       const mockContent = '<!DOCTYPE html><html><head><title>Test</title></head><body><h1>Test Slide</h1><p>Content</p></body></html>'
       
+      // Mock file existence check
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        return String(path).includes('/public/slides/public/test-presentation')
+      })
+      
       // Mock directory listing for the presentation directory
       mockFs.readdirSync.mockImplementation((dirPath: any) => {
         // Return different results based on the directory being read
@@ -145,9 +187,6 @@ describe('Server Utils', () => {
         }
         return []
       })
-      
-      // Mock file existence check
-      mockFs.existsSync.mockReturnValue(true)
       
       // Mock file reading
       mockFs.readFileSync.mockReturnValue(mockContent)
@@ -172,6 +211,10 @@ describe('Server Utils', () => {
     })
 
     it('should return null for page out of range', () => {
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        return String(path).includes('/public/slides/public/test-presentation')
+      })
+      
       mockFs.readdirSync.mockReturnValue([
         { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
       ])
@@ -181,6 +224,10 @@ describe('Server Utils', () => {
     })
 
     it('should handle file read errors gracefully', () => {
+      mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+        return String(path).includes('/public/slides/public/test-presentation')
+      })
+      
       mockFs.readdirSync.mockReturnValue([
         { name: '1.html', isDirectory: () => false, isFile: () => true } as any,
       ])
