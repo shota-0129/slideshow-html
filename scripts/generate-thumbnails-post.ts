@@ -1,40 +1,25 @@
 import fs from "fs/promises";
+import fsSync from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
 import http from "http";
 import handler from "serve-handler";
 
 // Helper functions to discover presentations
-function getAllPresentations() {
+function getAllPresentations(): Array<{ slug: string }> {
   try {
     const presentationsDir = path.join(process.cwd(), "out", "presentations");
-    const items: any[] = require('fs').readdirSync(presentationsDir, { withFileTypes: true });
+    const items = fsSync.readdirSync(presentationsDir, { withFileTypes: true });
     
     return items
-      .filter((item: any) => item.isDirectory())
-      .map((item: any) => ({ slug: item.name }));
+      .filter((item) => item.isDirectory())
+      .map((item) => ({ slug: item.name }));
   } catch (error) {
     console.error("Error reading presentation directories:", error);
     return [];
   }
 }
 
-function getPresentationData(slug: string) {
-  try {
-    const presentationDir = path.join(process.cwd(), "out", "presentations", slug);
-    const items: any[] = require('fs').readdirSync(presentationDir, { withFileTypes: true });
-    
-    const pageNumbers = items
-      .filter((item: any) => item.isDirectory() && /^\d+$/.test(item.name))
-      .map((item: any) => parseInt(item.name))
-      .sort((a, b) => a - b);
-    
-    return { totalPages: pageNumbers.length > 0 ? Math.max(...pageNumbers) : 0 };
-  } catch (error) {
-    console.error(`Error reading presentation ${slug}:`, error);
-    return { totalPages: 0 };
-  }
-}
 
 // Main async function to generate thumbnails
 (async () => {
@@ -68,7 +53,6 @@ function getPresentationData(slug: string) {
       const presentations = getAllPresentations();
       for (const pres of presentations) {
         const { slug } = pres;
-        const { totalPages } = getPresentationData(slug);
         const slugDir = path.join(thumbsRoot, slug);
         await fs.mkdir(slugDir, { recursive: true });
 
@@ -79,11 +63,27 @@ function getPresentationData(slug: string) {
           await fs.access(outFile);
           console.log(`⏩ Skipping ${slug}/${p}.jpg (already exists)`);
         } catch {
-          const url = `http://localhost:5050/presentations/${slug}/${p}/`;
+          // HTMLファイルを直接読み込むように変更
+          // publicとprivateの両方をチェック
+          const publicPath = path.join(process.cwd(), 'public', 'slides', 'public', slug, `${p}.html`);
+          const privatePath = path.join(process.cwd(), 'public', 'slides', 'private', slug, `${p}.html`);
+          
+          let htmlPath: string;
+          if (fsSync.existsSync(publicPath)) {
+            htmlPath = publicPath;
+          } else if (fsSync.existsSync(privatePath)) {
+            htmlPath = privatePath;
+          } else {
+            console.error(`❌ HTML file not found for ${slug}/${p}`);
+            continue;
+          }
+          
+          const htmlUrl = `file://${htmlPath}`;
           console.log(`⏳ Generating thumbnail for ${slug}/${p}.jpg...`);
           
-          await page.goto(url, { waitUntil: "networkidle0" });
-          const buf = await page.screenshot({ type: "jpeg", quality: 80 });
+          await page.goto(htmlUrl, { waitUntil: "networkidle0" });
+          await page.setViewport({ width: 1280, height: 720 });
+          const buf = await page.screenshot({ type: "jpeg", quality: 80, fullPage: false });
           await fs.writeFile(outFile, buf);
           
           console.log(`✅ Generated ${slug}/${p}.jpg`);
