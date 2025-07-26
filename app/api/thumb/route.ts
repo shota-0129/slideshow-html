@@ -11,7 +11,8 @@ import {
 } from "@/lib/error-handler";
 
 // Static export compatibility
-export const dynamic = 'force-static';
+// Note: Next.js doesn't support conditional exports, so we need to handle this differently
+export const dynamic = 'auto';
 export const revalidate = false;
 
 export async function GET(request: NextRequest) {
