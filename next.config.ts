@@ -26,6 +26,11 @@ const nextConfig = {
     unoptimized: isStatic,
   },
   
+  // 環境変数として basePath を公開
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repo}` : '',
+  },
+  
   reactStrictMode: true,
 };
 
