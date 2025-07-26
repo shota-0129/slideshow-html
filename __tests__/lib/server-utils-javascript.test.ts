@@ -48,19 +48,24 @@ describe('JavaScript Mode Server Utils', () => {
     mockFs.readdirSync.mockReturnValue([
       { name: '1.html', isDirectory: () => false, isFile: () => true } as any
     ]);
-    mockFs.existsSync.mockReturnValue(true);
+    mockFs.existsSync.mockImplementation((path: fs.PathLike) => {
+      return String(path).includes('/public/slides/public/test-presentation');
+    });
     
     // Mock path resolution for security checks - need to return paths that pass security validation
     const mockResolve = mockPath.resolve as jest.MockedFunction<typeof path.resolve>;
     mockResolve.mockImplementation((pathSegment: string) => {
-      if (pathSegment.includes('public/test-presentation') && !pathSegment.includes('.html')) {
-        return '/app/public/test-presentation';
+      if (pathSegment.includes('public/slides/public/test-presentation') && !pathSegment.includes('.html')) {
+        return '/app/public/slides/public/test-presentation';
       }
-      if (pathSegment.includes('public') && !pathSegment.includes('test-presentation')) {
-        return '/app/public';
+      if (pathSegment.includes('public/slides/private/test-presentation') && !pathSegment.includes('.html')) {
+        return '/app/public/slides/private/test-presentation';
+      }
+      if (pathSegment.includes('public/slides') && !pathSegment.includes('test-presentation')) {
+        return '/app/public/slides';
       }
       if (pathSegment.includes('1.html')) {
-        return '/app/public/test-presentation/1.html';
+        return '/app/public/slides/public/test-presentation/1.html';
       }
       return pathSegment;
     });

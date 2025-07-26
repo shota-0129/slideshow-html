@@ -83,17 +83,23 @@ pnpm install
 
 ### 1. プレゼンテーションの追加
 
-`public/`フォルダ内にHTMLファイルでディレクトリを作成:
+`public/slides/`フォルダ内にHTMLファイルでディレクトリを作成:
 
 ```
 public/
-├── my-presentation/
-│   ├── 1.html
-│   ├── 2.html
-│   └── 3.html
-└── another-presentation/
-    ├── 1.html
-    └── 2.html
+└── slides/
+    ├── public/              # 公開スライド（Gitで管理）
+    │   ├── my-presentation/
+    │   │   ├── 1.html
+    │   │   ├── 2.html
+    │   │   └── 3.html
+    │   └── another-presentation/
+    │       ├── 1.html
+    │       └── 2.html
+    └── private/             # 非公開スライド（.gitignoreで除外）
+        └── confidential-meeting/
+            ├── 1.html
+            └── 2.html
 ```
 
 ### 2. HTMLファイル形式
@@ -198,33 +204,40 @@ npm run preview:static
 
 ## 🔐 スライドの公開範囲の管理
 
-このアプリケーションでは、`public`ディレクトリに含まれるすべてのスライドがビルドされ、公開の対象となります。スライドごとに公開・非公開を管理するための方法をいくつか紹介します。
+このアプリケーションでは、スライドを`public`と`private`のディレクトリに分けて管理できます。
 
-### 基本的な考え方
+### ディレクトリ構造による管理
 
-- **公開されるもの**: `main`ブランチの`public`ディレクトリに含まれているスライド
-- **公開されないもの**: `main`ブランチの`public`ディレクトリに含まれていないスライド
+- **公開スライド**: `public/slides/public/`ディレクトリに配置
+  - Gitで管理され、リポジトリにコミットされます
+  - 本番環境でアクセス可能です
 
-この原則に基づき、Gitのブランチ戦略を利用して公開範囲を管理するのが最も効果的です。
+- **非公開スライド**: `public/slides/private/`ディレクトリに配置
+  - `.gitignore`で除外され、リポジトリにコミットされません
+  - ローカル環境でのみアクセス可能です
+  - 機密情報や社内限定資料の管理に適しています
 
-### 推奨する管理方法：ブランチの使い分け
+### 使い方
 
-現在のCI/CD設定（`main`ブランチへのマージで本番デプロイ）に最適な方法です。
+1. **公開スライドの追加**:
+   ```bash
+   # public/slides/public/内に新しいプレゼンテーションを作成
+   mkdir -p public/slides/public/new-presentation
+   # HTMLファイルを追加
+   ```
 
-1.  **`develop`ブランチ（またはfeatureブランチ）**:
-    - 全てのスライド（公開用、非公開用、下書きなど）をこのブランチで管理します。
-    - `public`ディレクトリに非公開のスライドを追加し、ローカル環境 (`npm run dev`) で表示や編集を行います。
-    - このブランチはGitHub Pagesにはデプロイされません。
+2. **非公開スライドの追加**:
+   ```bash
+   # public/slides/private/内に新しいプレゼンテーションを作成
+   mkdir -p public/slides/private/confidential-data
+   # HTMLファイルを追加（自動的にGitから除外されます）
+   ```
 
-2.  **`main`ブランチ**:
-    - **公開したいスライドだけ**をこのブランチに含めます。
-    - `develop`ブランチから`main`ブランチへPull Requestを作成する際に、**非公開にしたいスライドのファイルは含めない**ようにします。
-    - Pull Requestがマージされると、`main`ブランチに含まれる公開スライドのみがGitHub Pagesにデプロイされます。
+### ⚠️ セキュリティに関する注意事項
 
-### ⚠️ 注意事項
-
-- **一度PublicリポジトリにPushした情報は公開情報です**: 非公開にしたいファイルは、絶対に`main`ブランチにマージしたり、PublicリポジトリにPushしないでください。一度Pushしてしまうと、履歴から削除しても誰かが閲覧した可能性があります。
-- **ローカル専用のスライド**: もしリポジトリに含めたくない機密性の高いスライドがある場合は、プロジェクトルートに`.gitignore`ファイルを作成し、そのファイルやディレクトリ名を追記することで、Gitの管理対象から除外できます。
+- **privateディレクトリの内容は本番環境にデプロイされません**: `.gitignore`で除外されているため、リポジトリにコミットされません
+- **機密情報の取り扱い**: 一度でもpublicディレクトリやリポジトリにコミットした情報は、削除しても履歴に残る可能性があります
+- **アクセス制御**: このアプリケーション自体には認証機能がないため、本番環境では`public/slides/public/`内のすべてのスライドが公開されます
 
 
 ## 📁 プロジェクト構造
@@ -246,8 +259,10 @@ slideshow-html/
 │   ├── logger.ts              # Logging utilities
 │   └── utils.ts               # General utilities
 ├── public/                     # Static files and presentations
-│   ├── [presentation-name]/    # Your presentation directories
-│   └── thumbs/                # Generated thumbnails (static mode)
+│   ├── slides/                # Presentation directories
+│   │   ├── public/           # Public presentations (tracked in git)
+│   │   └── private/          # Private presentations (gitignored)
+│   └── thumb/                 # Generated thumbnails (static mode)
 ├── scripts/                    # Build scripts
 │   └── generate-thumbnails-post.ts
 └── README.md
