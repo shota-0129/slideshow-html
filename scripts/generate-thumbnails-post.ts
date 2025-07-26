@@ -79,11 +79,27 @@ function getPresentationData(slug: string) {
           await fs.access(outFile);
           console.log(`⏩ Skipping ${slug}/${p}.jpg (already exists)`);
         } catch {
-          const url = `http://localhost:5050/presentations/${slug}/${p}/`;
+          // HTMLファイルを直接読み込むように変更
+          // publicとprivateの両方をチェック
+          const publicPath = path.join(process.cwd(), 'public', 'slides', 'public', slug, `${p}.html`);
+          const privatePath = path.join(process.cwd(), 'public', 'slides', 'private', slug, `${p}.html`);
+          
+          let htmlPath: string;
+          if (require('fs').existsSync(publicPath)) {
+            htmlPath = publicPath;
+          } else if (require('fs').existsSync(privatePath)) {
+            htmlPath = privatePath;
+          } else {
+            console.error(`❌ HTML file not found for ${slug}/${p}`);
+            continue;
+          }
+          
+          const htmlUrl = `file://${htmlPath}`;
           console.log(`⏳ Generating thumbnail for ${slug}/${p}.jpg...`);
           
-          await page.goto(url, { waitUntil: "networkidle0" });
-          const buf = await page.screenshot({ type: "jpeg", quality: 80 });
+          await page.goto(htmlUrl, { waitUntil: "networkidle0" });
+          await page.setViewport({ width: 1280, height: 720 });
+          const buf = await page.screenshot({ type: "jpeg", quality: 80, fullPage: false });
           await fs.writeFile(outFile, buf);
           
           console.log(`✅ Generated ${slug}/${p}.jpg`);
