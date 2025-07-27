@@ -1,0 +1,198 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"_lnXhHnDwZXPwxaObK9rd","p":"/slideshow-html","c":["","presentations","how-to-use","2","full-screen"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","how-to-use","d"],{"children":[["page","2","d"],{"children":["full-screen",{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"Bw42CYfR/9+a5YPETOnZYw==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","how-to-use","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","2","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["full-screen",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","J4ojmpPh63iO7sbKLGU-b",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[9168,["187","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js"],"FullScreenViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T1505,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ステップ1: セットアップ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: 20px 40px;
+            animation: slideInUp 0.8s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .step-number {
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-out 0.3s both;
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: fadeInLeft 1s ease-out 0.5s both;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .requirements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .requirement-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out calc(0.7s + var(--delay)) both;
+        }
+        
+        .requirement-card:nth-child(1) { --delay: 0s; }
+        .requirement-card:nth-child(2) { --delay: 0.2s; }
+        .requirement-card:nth-child(3) { --delay: 0.4s; }
+        
+        .requirement-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .card-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="step-number">STEP 1</div>
+        <h1 class="title">必要な環境とセットアップ</h1>
+        
+        <div class="requirements">
+            <div class="requirement-card">
+                <span class="card-icon">⚡</span>
+                <h3 class="card-title">Node.js <span class="highlight">18+</span></h3>
+                <p class="card-description">
+                    最新のLTS版をnodejs.orgから<br>
+                    ダウンロードしてインストール
+                </p>
+            </div>
+            
+            <div class="requirement-card">
+                <span class="card-icon">📦</span>
+                <h3 class="card-title">パッケージマネージャー</h3>
+                <p class="card-description">
+                    npm（Node.js付属）または<br>
+                    yarn, pnpmを使用可能
+                </p>
+            </div>
+            
+            <div class="requirement-card">
+                <span class="card-icon">🌐</span>
+                <h3 class="card-title">モダンブラウザ</h3>
+                <p class="card-description">
+                    Chrome, Firefox, Safari, Edge<br>
+                    の最新版を推奨
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>5:["$","$L13",null,{"slug":"how-to-use","currentPage":2,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-Bw42CYfR/9+a5YPETOnZYw=='; style-src 'self' 'nonce-Bw42CYfR/9+a5YPETOnZYw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}

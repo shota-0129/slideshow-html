@@ -1,0 +1,394 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"_lnXhHnDwZXPwxaObK9rd","p":"/slideshow-html","c":["","presentations","company-presentation","2","full-screen"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","company-presentation","d"],{"children":[["page","2","d"],{"children":["full-screen",{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"Bw42CYfR/9+a5YPETOnZYw==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","company-presentation","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","2","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["full-screen",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","OqTCwqIXBETa-uEGCrfIU",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[9168,["187","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js"],"FullScreenViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T31d6,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>現在の課題</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: 3vh 4.5vw; /* ~22px top/bottom, 58px left/right */
+            animation: slideInLeft 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .title {
+            font-size: 4.2vh; /* ~30px at 720px height */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2.8vh; /* ~20px at 720px height */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8vw; /* ~23px at 1280px width */
+            margin-top: 2vh; /* ~14px at 720px height */
+            flex: 1;
+            align-content: start;
+            max-height: 70vh; /* Limit height to prevent overflow */
+        }
+        
+        .problem-card {
+            background: rgba(255,255,255,0.15);
+            padding: 2.2vh 1.8vw; /* ~16px vertical, ~23px horizontal */
+            border-radius: 2vh; /* ~14px at 720px height */
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease-out calc(0.6s + var(--delay)) both;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            max-height: 32vh; /* Limit card height */
+        }
+        
+        .problem-card:nth-child(1) { --delay: 0s; }
+        .problem-card:nth-child(2) { --delay: 0.2s; }
+        .problem-card:nth-child(3) { --delay: 0.4s; }
+        .problem-card:nth-child(4) { --delay: 0.6s; }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .problem-card:hover::before {
+            left: 100%;
+        }
+        
+        .problem-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5vh; /* ~18px at 720px height */
+        }
+        
+        .problem-icon {
+            font-size: 4vh; /* ~29px at 720px height */
+            margin-right: 1.5vw; /* ~19px at 1280px width */
+            animation: shake 2s ease-in-out infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .problem-title {
+            font-size: 2.8vh; /* ~20px at 720px height */
+            font-weight: bold;
+            color: #ffeaa7;
+        }
+        
+        .problem-description {
+            font-size: 1.8vh; /* ~13px at 720px height */
+            line-height: 1.4;
+            margin-bottom: 1.8vh; /* ~13px at 720px height */
+        }
+        
+        .impact-list {
+            list-style: none;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: center;
+            margin: 1vh 0; /* ~7px at 720px height */
+            font-size: 1.6vh; /* ~12px at 720px height */
+            opacity: 0.9;
+        }
+        
+        .impact-icon {
+            color: #fd79a8;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .stats-section {
+            background: rgba(255,255,255,0.1);
+            padding: 1.8vh 2vw; /* ~13px vertical, ~26px horizontal */
+            border-radius: 1.5vh; /* ~11px at 720px height */
+            margin-top: 1.8vh; /* ~13px at 720px height */
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+            animation: fadeInUp 1.5s ease-out 1.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stats-title {
+            font-size: 2.2vh; /* ~16px at 720px height */
+            margin-bottom: 1.5vh; /* ~11px at 720px height */
+            color: #ffeaa7;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5vw; /* ~19px at 1280px width */
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.8vh; /* ~20px at 720px height */
+            font-weight: bold;
+            color: #fd79a8;
+            animation: countUp 2s ease-out 1.5s both;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .stat-label {
+            font-size: 1.3vh; /* ~9px at 720px height */
+            margin-top: 0.8vh; /* ~6px at 720px height */
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+        
+        .urgent-badge {
+            background: #fd79a8;
+            color: white;
+            padding: 1.2vh 1.8vw; /* ~9px vertical, ~23px horizontal */
+            border-radius: 2.5vh; /* ~18px at 720px height */
+            font-size: 1.6vh; /* ~12px at 720px height */
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            align-self: flex-end;
+            margin-bottom: 1.8vh; /* ~13px at 720px height */
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="urgent-badge">🚨 解決が必要</div>
+        
+        <h1 class="title">現在のプレゼンテーション課題</h1>
+        
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-icon">💸</span>
+                    <h3 class="problem-title">高額なライセンス費用</h3>
+                </div>
+                <p class="problem-description">
+                    PowerPointやKeynoteの<span class="highlight">企業ライセンス</span>により、
+                    年間のソフトウェアコストが膨大
+                </p>
+                <ul class="impact-list">
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        全社員分のライセンス購入が必要
+                    </li>
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        バージョンアップ費用も継続発生
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-icon">🔄</span>
+                    <h3 class="problem-title">互換性の問題</h3>
+                </div>
+                <p class="problem-description">
+                    異なるソフトウェア間で<span class="highlight">レイアウト崩れ</span>や
+                    フォント表示の問題が頻発
+                </p>
+                <ul class="impact-list">
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        Mac・Windows間での表示差異
+                    </li>
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        バージョン違いによる問題
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-icon">⏰</span>
+                    <h3 class="problem-title">作成時間の浪費</h3>
+                </div>
+                <p class="problem-description">
+                    デザインやレイアウト調整に<span class="highlight">過度な時間</span>を費やし、
+                    本来の業務に集中できない
+                </p>
+                <ul class="impact-list">
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        デザイン作業に数時間
+                    </li>
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        フォーマット統一の手間
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="problem-card">
+                <div class="problem-header">
+                    <span class="problem-icon">🔐</span>
+                    <h3 class="problem-title">セキュリティリスク</h3>
+                </div>
+                <p class="problem-description">
+                    機密情報を含む資料の<span class="highlight">管理・共有</span>に
+                    セキュリティ上の懸念
+                </p>
+                <ul class="impact-list">
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        ファイル共有時の漏洩リスク
+                    </li>
+                    <li class="impact-item">
+                        <span class="impact-icon">•</span>
+                        アクセス権限の管理困難
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="stats-section">
+            <h3 class="stats-title">📊 現状の数値データ</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">¥180万</div>
+                    <div class="stat-label">年間ライセンス費用</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3.5時間</div>
+                    <div class="stat-label">平均資料作成時間</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15%</div>
+                    <div class="stat-label">互換性問題発生率</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>5:["$","$L13",null,{"slug":"company-presentation","currentPage":2,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-Bw42CYfR/9+a5YPETOnZYw=='; style-src 'self' 'nonce-Bw42CYfR/9+a5YPETOnZYw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}

@@ -1,0 +1,348 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"_lnXhHnDwZXPwxaObK9rd","p":"/slideshow-html","c":["","presentations","use-cases","4","full-screen"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","use-cases","d"],{"children":[["page","4","d"],{"children":["full-screen",{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"D19wO3Nj0uhxatC4psVRIg==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","use-cases","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","4","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["full-screen",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","lKeHRvOeb3OaLv0g99uzs",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[9168,["187","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js"],"FullScreenViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T2aa9,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活用シーン2: 教育・研修</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: clamp(15px, 3vw, 30px);
+            animation: rotateIn 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+        
+        .scenario-badge {
+            background: rgba(255,255,255,0.2);
+            padding: clamp(6px, 1.2vw, 8px) clamp(12px, 2.5vw, 18px);
+            border-radius: clamp(12px, 2.5vw, 18px);
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+            display: inline-block;
+            margin-bottom: clamp(8px, 1.8vw, 15px);
+            animation: flipInY 1s ease-out 0.3s both;
+        }
+        
+        @keyframes flipInY {
+            from {
+                opacity: 0;
+                transform: perspective(400px) rotateY(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: perspective(400px) rotateY(0deg);
+            }
+        }
+        
+        .title {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            font-weight: bold;
+            margin-bottom: clamp(15px, 3vw, 25px);
+            animation: slideInDown 1s ease-out 0.5s both;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(8px, 1.8vw, 15px);
+            margin-top: clamp(8px, 1.8vw, 15px);
+            flex: 1;
+            min-height: 0;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.15);
+            padding: clamp(8px, 1.8vw, 15px);
+            border-radius: clamp(8px, 1.8vw, 12px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease-out calc(0.7s + var(--delay)) both;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .feature-card:nth-child(1) { --delay: 0s; }
+        .feature-card:nth-child(2) { --delay: 0.2s; }
+        .feature-card:nth-child(3) { --delay: 0.4s; }
+        .feature-card:nth-child(4) { --delay: 0.6s; }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .feature-card:hover::after {
+            transform: translateX(100%);
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: clamp(10px, 2.5vw, 20px);
+        }
+        
+        .feature-icon {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-right: clamp(12px, 2.5vw, 20px);
+            animation: spin 3s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .feature-title {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: bold;
+        }
+        
+        .feature-description {
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            line-height: 1.6;
+            margin-bottom: clamp(10px, 2.5vw, 20px);
+            opacity: 0.9;
+        }
+        
+        .feature-benefits {
+            list-style: none;
+        }
+        
+        .benefit-point {
+            display: flex;
+            align-items: center;
+            margin: clamp(6px, 1.5vw, 10px) 0;
+            font-size: clamp(0.8rem, 1.6vw, 1rem);
+        }
+        
+        .check-icon {
+            color: #ffeaa7;
+            margin-right: clamp(6px, 1.5vw, 10px);
+            font-weight: bold;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+        
+        .learning-stats {
+            background: rgba(255,255,255,0.1);
+            padding: clamp(8px, 1.8vw, 15px);
+            border-radius: clamp(6px, 1.5vw, 10px);
+            margin-top: clamp(8px, 1.8vw, 15px);
+            text-align: center;
+            animation: fadeIn 1.5s ease-out 1.5s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .stats-title {
+            font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+            margin-bottom: clamp(8px, 2vw, 15px);
+            color: #ffeaa7;
+        }
+        
+        .stats-text {
+            font-size: clamp(0.9rem, 1.7vw, 1.1rem);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="scenario-badge">📚 活用シーン 2</div>
+        <h1 class="title">教育・研修での活用</h1>
+        
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span class="feature-icon">🎓</span>
+                    <h3 class="feature-title">授業・講義</h3>
+                </div>
+                <p class="feature-description">
+                    学校や大学での<span class="highlight">授業資料</span>として活用
+                </p>
+                <ul class="feature-benefits">
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        インタラクティブな教材作成
+                    </li>
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        学生のデバイスで同時閲覧
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span class="feature-icon">💼</span>
+                    <h3 class="feature-title">企業研修</h3>
+                </div>
+                <p class="feature-description">
+                    社内研修や<span class="highlight">スキルアップ</span>プログラム
+                </p>
+                <ul class="feature-benefits">
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        新人研修カリキュラム
+                    </li>
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        技術勉強会での共有
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span class="feature-icon">🌐</span>
+                    <h3 class="feature-title">オンライン学習</h3>
+                </div>
+                <p class="feature-description">
+                    リモートでの<span class="highlight">学習体験</span>を向上
+                </p>
+                <ul class="feature-benefits">
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        自分のペースで学習
+                    </li>
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        モバイル対応で通勤中も
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title">データ分析研修</h3>
+                </div>
+                <p class="feature-description">
+                    <span class="highlight">視覚的な資料</span>で理解度アップ
+                </p>
+                <ul class="feature-benefits">
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        チャートやグラフを活用
+                    </li>
+                    <li class="benefit-point">
+                        <span class="check-icon">✓</span>
+                        段階的な説明が可能
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="learning-stats">
+            <h4 class="stats-title">💡 学習効果向上のポイント</h4>
+            <p class="stats-text">
+                <span class="highlight">視覚的な資料</span>は文字だけの資料と比べて<br>
+                <span class="highlight">理解度が65%向上</span>し、<span class="highlight">記憶定着率が3倍</span>になると言われています
+            </p>
+        </div>
+    </div>
+</body>
+</html>5:["$","$L13",null,{"slug":"use-cases","currentPage":4,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-D19wO3Nj0uhxatC4psVRIg=='; style-src 'self' 'nonce-D19wO3Nj0uhxatC4psVRIg=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}
