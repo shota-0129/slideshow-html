@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/slideshow-html/_next/static/css/bea8e1239a69bd50.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/slideshow-html/_next/static/chunks/webpack-76470da6a700b071.js"/><script src="/slideshow-html/_next/static/chunks/4bd1b696-4764744474983ccd.js" async=""></script><script src="/slideshow-html/_next/static/chunks/684-4b717961979d3538.js" async=""></script><script src="/slideshow-html/_next/static/chunks/main-app-a8f3314847133cf9.js" async=""></script><script src="/slideshow-html/_next/static/chunks/app/layout-0f5856922dda0942.js" async=""></script><script src="/slideshow-html/_next/static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js" async=""></script><meta name="next-size-adjust" content=""/><title>HTML Slideshow Viewer</title><meta name="description" content="A Next.js application for viewing HTML slideshows"/><meta name="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload"/><meta name="X-Frame-Options" content="DENY"/><meta name="X-Content-Type-Options" content="nosniff"/><meta name="X-DNS-Prefetch-Control" content="off"/><meta name="X-Download-Options" content="noopen"/><meta name="X-Permitted-Cross-Domain-Policies" content="none"/><meta name="Referrer-Policy" content="strict-origin-when-cross-origin"/><meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/><meta name="Cross-Origin-Embedder-Policy" content="require-corp"/><meta name="Cross-Origin-Opener-Policy" content="same-origin"/><meta name="Cross-Origin-Resource-Policy" content="same-site"/><meta name="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;nonce-+iq7E6PP0snxGETwDpYqzw==&#x27;; style-src &#x27;self&#x27; &#x27;nonce-+iq7E6PP0snxGETwDpYqzw==&#x27;; img-src &#x27;self&#x27; data: blob:; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;; frame-ancestors &#x27;none&#x27;; upgrade-insecure-requests"/><link rel="icon" href="/slideshow-html/favicon.ico" type="image/x-icon" sizes="16x16"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/slideshow-html/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86"><div class="w-screen h-screen bg-black flex items-center justify-center cursor-pointer overflow-hidden" title="次へ進む"><div style="width:1280px;height:720px;transform:scale(1);transform-origin:center center"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;まとめ: あなたの次のステップ&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: &#x27;Hiragino Sans&#x27;, &#x27;Yu Gothic&#x27;, &#x27;Meiryo&#x27;, sans-serif;
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+        
+        .background-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: clamp(12px, 2.5vw, 20px);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: zoomIn 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .title {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: bold;
+            margin-bottom: clamp(8px, 2vw, 15px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(6px, 1.5vw, 12px);
+            margin: clamp(8px, 2vw, 15px) 0;
+            flex: 1;
+            min-height: 0;
+        }
+        
+        .summary-card {
+            background: rgba(255,255,255,0.15);
+            padding: clamp(6px, 1.5vw, 12px);
+            border-radius: clamp(6px, 1.5vw, 10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease-out calc(0.6s + var(--delay)) both;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .summary-card:nth-child(1) { --delay: 0s; }
+        .summary-card:nth-child(2) { --delay: 0.2s; }
+        .summary-card:nth-child(3) { --delay: 0.4s; }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .summary-card::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .card-icon {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: clamp(10px, 2.5vw, 20px);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .card-title {
+            font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+            font-weight: bold;
+            margin-bottom: clamp(8px, 1.8vw, 15px);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section {
+            background: rgba(255,255,255,0.2);
+            padding: clamp(6px, 1.5vw, 12px);
+            border-radius: clamp(8px, 1.8vw, 12px);
+            margin-top: clamp(6px, 1.5vw, 12px);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: bounceIn 1.5s ease-out 1.2s both;
+            position: relative;
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .cta-title {
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            font-weight: bold;
+            margin-bottom: clamp(10px, 2vw, 15px);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 20px rgba(255,255,255,0.8); }
+        }
+        
+        .cta-text {
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            line-height: 1.4;
+            margin-bottom: clamp(15px, 3vw, 20px);
+        }
+        
+        .steps-list {
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 2vw, 20px);
+            flex-wrap: wrap;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2.5vw, 20px);
+            border-radius: clamp(15px, 3vw, 25px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            background: #ffeaa7;
+            color: #d63031;
+            width: clamp(20px, 3vw, 25px);
+            height: clamp(20px, 3vw, 25px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: clamp(8px, 1.5vw, 12px);
+            font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+            font-weight: 500;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+        
+        .sparkle {
+            position: absolute;
+            color: #ffeaa7;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        
+        .sparkle-1 { top: 10px; right: 20px; animation-delay: 0s; }
+        .sparkle-2 { bottom: 15px; left: 25px; animation-delay: 1s; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;background-shapes&quot;&gt;
+        &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;slide-container&quot;&gt;
+        &lt;h1 class=&quot;title&quot;&gt;始めてみませんか？&lt;/h1&gt;
+        
+        &lt;div class=&quot;summary-grid&quot;&gt;
+            &lt;div class=&quot;summary-card&quot;&gt;
+                &lt;div class=&quot;card-icon&quot;&gt;💼&lt;/div&gt;
+                &lt;h3 class=&quot;card-title&quot;&gt;ビジネス&lt;/h3&gt;
+                &lt;p class=&quot;card-description&quot;&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;プロフェッショナル&lt;/span&gt;な&lt;br&gt;
+                    プレゼンテーション
+                &lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;summary-card&quot;&gt;
+                &lt;div class=&quot;card-icon&quot;&gt;📚&lt;/div&gt;
+                &lt;h3 class=&quot;card-title&quot;&gt;教育&lt;/h3&gt;
+                &lt;p class=&quot;card-description&quot;&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;効果的な学習&lt;/span&gt;体験を&lt;br&gt;
+                    提供
+                &lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;summary-card&quot;&gt;
+                &lt;div class=&quot;card-icon&quot;&gt;⚡&lt;/div&gt;
+                &lt;h3 class=&quot;card-title&quot;&gt;技術&lt;/h3&gt;
+                &lt;p class=&quot;card-description&quot;&gt;
+                    技術ドキュメントを&lt;br&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;分かりやすく&lt;/span&gt;共有
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;cta-section&quot;&gt;
+            &lt;div class=&quot;sparkle sparkle-1&quot;&gt;✨&lt;/div&gt;
+            &lt;div class=&quot;sparkle sparkle-2&quot;&gt;⭐&lt;/div&gt;
+            
+            &lt;h2 class=&quot;cta-title&quot;&gt;今すぐ始めよう！&lt;/h2&gt;
+            &lt;p class=&quot;cta-text&quot;&gt;
+                今すぐ始めて、美しいスライドショーを作成しましょう！
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-full border-0" title="Slide 6 (Full Screen)" sandbox="allow-scripts"></iframe></div></div><!--$--><!--/$--><!--$--><!--/$--><script src="/slideshow-html/_next/static/chunks/webpack-76470da6a700b071.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[5693,[\"177\",\"static/chunks/app/layout-0f5856922dda0942.js\"],\"SecurityProvider\"]\n3:I[7555,[],\"\"]\n4:I[1295,[],\"\"]\n6:I[9665,[],\"MetadataBoundary\"]\n8:I[9665,[],\"OutletBoundary\"]\nb:I[4911,[],\"AsyncMetadataOutlet\"]\nd:I[9665,[],\"ViewportBoundary\"]\nf:I[6614,[],\"\"]\n:HL[\"/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/slideshow-html/_next/static/css/bea8e1239a69bd50.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"08dMET7hb8dELKFO1cHsW\",\"p\":\"/slideshow-html\",\"c\":[\"\",\"presentations\",\"use-cases\",\"6\",\"full-screen\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"presentations\",{\"children\":[[\"slug\",\"use-cases\",\"d\"],{\"children\":[[\"page\",\"6\",\"d\"],{\"children\":[\"full-screen\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/slideshow-html/_next/static/css/bea8e1239a69bd50.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86\",\"children\":[\"$\",\"$L2\",null,{\"nonce\":\"+iq7E6PP0snxGETwDpYqzw==\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]}]]}],{\"children\":[\"presentations\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"use-cases\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"page\",\"6\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"full-screen\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[\"$\",\"$L6\",null,{\"children\":\"$L7\"}],null,[\"$\",\"$L8\",null,{\"children\":[\"$L9\",\"$La\",[\"$\",\"$Lb\",null,{\"promise\":\"$@c\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"AuYcwQqk1pCjqUlSJrVoQ\",{\"children\":[[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"10:\"$Sreact.suspense\"\n11:I[4911,[],\"AsyncMetadata\"]\n13:I[9168,[\"187\",\"static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js\"],\"FullScreenViewer\"]\n7:[\"$\",\"$10\",null,{\"fallback\":null,\"children\":[\"$\",\"$L11\",null,{\"promise\":\"$@12\"}]}]\n14:T2ac9,"])</script><script>self.__next_f.push([1,"\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"ja\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eまとめ: あなたの次のステップ\u003c/title\u003e\n    \u003cstyle\u003e\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        \n        body {\n            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;\n            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);\n            color: white;\n            margin: 0;\n            padding: 0;\n            width: 1280px;\n            height: 720px;\n            overflow: hidden;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            position: relative;\n            box-sizing: border-box;\n        }\n        \n        .background-shapes {\n            position: absolute;\n            width: 100%;\n            height: 100%;\n            pointer-events: none;\n            overflow: hidden;\n        }\n        \n        .shape {\n            position: absolute;\n            background: rgba(255,255,255,0.1);\n            animation: float 6s ease-in-out infinite;\n        }\n        \n        .shape:nth-child(1) {\n            width: 80px;\n            height: 80px;\n            border-radius: 50%;\n            top: 10%;\n            left: 10%;\n            animation-delay: 0s;\n        }\n        \n        .shape:nth-child(2) {\n            width: 60px;\n            height: 60px;\n            border-radius: 50%;\n            top: 20%;\n            right: 15%;\n            animation-delay: 2s;\n        }\n        \n        .shape:nth-child(3) {\n            width: 100px;\n            height: 100px;\n            border-radius: 20px;\n            bottom: 20%;\n            left: 20%;\n            animation-delay: 4s;\n        }\n        \n        @keyframes float {\n            0%, 100% { transform: translateY(0px) rotate(0deg); }\n            50% { transform: translateY(-20px) rotate(10deg); }\n        }\n        \n        .slide-container {\n            width: 1280px;\n            height: 720px;\n            padding: clamp(12px, 2.5vw, 20px);\n            text-align: center;\n            position: relative;\n            z-index: 2;\n            animation: zoomIn 1s ease-out;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            box-sizing: border-box;\n            overflow: hidden;\n        }\n        \n        @keyframes zoomIn {\n            from {\n                opacity: 0;\n                transform: scale(0.8);\n            }\n            to {\n                opacity: 1;\n                transform: scale(1);\n            }\n        }\n        \n        .title {\n            font-size: clamp(1.3rem, 3vw, 2rem);\n            font-weight: bold;\n            margin-bottom: clamp(8px, 2vw, 15px);\n            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\n            animation: slideInDown 1s ease-out 0.3s both;\n        }\n        \n        @keyframes slideInDown {\n            from {\n                opacity: 0;\n                transform: translateY(-50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        .summary-grid {\n            display: grid;\n            grid-template-columns: repeat(3, 1fr);\n            gap: clamp(6px, 1.5vw, 12px);\n            margin: clamp(8px, 2vw, 15px) 0;\n            flex: 1;\n            min-height: 0;\n        }\n        \n        .summary-card {\n            background: rgba(255,255,255,0.15);\n            padding: clamp(6px, 1.5vw, 12px);\n            border-radius: clamp(6px, 1.5vw, 10px);\n            backdrop-filter: blur(10px);\n            border: 1px solid rgba(255,255,255,0.2);\n            transition: all 0.4s ease;\n            animation: slideInUp 0.8s ease-out calc(0.6s + var(--delay)) both;\n            position: relative;\n            overflow: hidden;\n            text-align: center;\n            display: flex;\n            flex-direction: column;\n            min-height: 0;\n        }\n        \n        .summary-card:nth-child(1) { --delay: 0s; }\n        .summary-card:nth-child(2) { --delay: 0.2s; }\n        .summary-card:nth-child(3) { --delay: 0.4s; }\n        \n        @keyframes slideInUp {\n            from {\n                opacity: 0;\n                transform: translateY(50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        .summary-card:hover {\n            transform: translateY(-15px) scale(1.05);\n            box-shadow: 0 25px 50px rgba(0,0,0,0.3);\n            border-color: rgba(255,255,255,0.4);\n        }\n        \n        .summary-card::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            left: -50%;\n            width: 200%;\n            height: 200%;\n            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);\n            animation: shimmer 3s infinite;\n        }\n        \n        @keyframes shimmer {\n            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }\n            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }\n        }\n        \n        .card-icon {\n            font-size: clamp(2.5rem, 5vw, 3.5rem);\n            margin-bottom: clamp(10px, 2.5vw, 20px);\n            animation: pulse 2s ease-in-out infinite;\n        }\n        \n        @keyframes pulse {\n            0%, 100% { transform: scale(1); }\n            50% { transform: scale(1.1); }\n        }\n        \n        .card-title {\n            font-size: clamp(1.1rem, 2.2vw, 1.5rem);\n            font-weight: bold;\n            margin-bottom: clamp(8px, 1.8vw, 15px);\n            position: relative;\n            z-index: 2;\n        }\n        \n        .card-description {\n            font-size: 1rem;\n            line-height: 1.5;\n            opacity: 0.9;\n            position: relative;\n            z-index: 2;\n        }\n        \n        .cta-section {\n            background: rgba(255,255,255,0.2);\n            padding: clamp(6px, 1.5vw, 12px);\n            border-radius: clamp(8px, 1.8vw, 12px);\n            margin-top: clamp(6px, 1.5vw, 12px);\n            border: 1px solid rgba(255,255,255,0.3);\n            animation: bounceIn 1.5s ease-out 1.2s both;\n            position: relative;\n        }\n        \n        @keyframes bounceIn {\n            0% { opacity: 0; transform: scale(0.3); }\n            50% { transform: scale(1.05); }\n            70% { transform: scale(0.9); }\n            100% { opacity: 1; transform: scale(1); }\n        }\n        \n        .cta-title {\n            font-size: clamp(1.4rem, 3vw, 2.2rem);\n            font-weight: bold;\n            margin-bottom: clamp(10px, 2vw, 15px);\n            animation: glow 2s ease-in-out infinite alternate;\n        }\n        \n        @keyframes glow {\n            from { text-shadow: 0 0 5px rgba(255,255,255,0.5); }\n            to { text-shadow: 0 0 20px rgba(255,255,255,0.8); }\n        }\n        \n        .cta-text {\n            font-size: clamp(0.9rem, 1.8vw, 1.1rem);\n            line-height: 1.4;\n            margin-bottom: clamp(15px, 3vw, 20px);\n        }\n        \n        .steps-list {\n            display: flex;\n            justify-content: center;\n            gap: clamp(10px, 2vw, 20px);\n            flex-wrap: wrap;\n        }\n        \n        .step-item {\n            display: flex;\n            align-items: center;\n            background: rgba(255,255,255,0.1);\n            padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2.5vw, 20px);\n            border-radius: clamp(15px, 3vw, 25px);\n            border: 1px solid rgba(255,255,255,0.3);\n            transition: all 0.3s ease;\n        }\n        \n        .step-item:hover {\n            background: rgba(255,255,255,0.2);\n            transform: translateY(-5px);\n        }\n        \n        .step-number {\n            background: #ffeaa7;\n            color: #d63031;\n            width: clamp(20px, 3vw, 25px);\n            height: clamp(20px, 3vw, 25px);\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            margin-right: clamp(8px, 1.5vw, 12px);\n            font-size: clamp(0.7rem, 1.3vw, 0.8rem);\n            flex-shrink: 0;\n        }\n        \n        .step-text {\n            font-size: clamp(0.8rem, 1.5vw, 1rem);\n            font-weight: 500;\n        }\n        \n        .highlight {\n            color: #ffeaa7;\n            font-weight: bold;\n        }\n        \n        .sparkle {\n            position: absolute;\n            color: #ffeaa7;\n            font-size: clamp(1rem, 2vw, 1.5rem);\n            animation: sparkle 2s ease-in-out infinite;\n        }\n        \n        @keyframes sparkle {\n            0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }\n            50% { opacity: 1; transform: scale(1) rotate(180deg); }\n        }\n        \n        .sparkle-1 { top: 10px; right: 20px; animation-delay: 0s; }\n        .sparkle-2 { bottom: 15px; left: 25px; animation-delay: 1s; }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv class=\"background-shapes\"\u003e\n        \u003cdiv class=\"shape\"\u003e\u003c/div\u003e\n        \u003cdiv class=\"shape\"\u003e\u003c/div\u003e\n        \u003cdiv class=\"shape\"\u003e\u003c/div\u003e\n    \u003c/div\u003e\n    \n    \u003cdiv class=\"slide-container\"\u003e\n        \u003ch1 class=\"title\"\u003e始めてみませんか？\u003c/h1\u003e\n        \n        \u003cdiv class=\"summary-grid\"\u003e\n            \u003cdiv class=\"summary-card\"\u003e\n                \u003cdiv class=\"card-icon\"\u003e💼\u003c/div\u003e\n                \u003ch3 class=\"card-title\"\u003eビジネス\u003c/h3\u003e\n                \u003cp class=\"card-description\"\u003e\n                    \u003cspan class=\"highlight\"\u003eプロフェッショナル\u003c/span\u003eな\u003cbr\u003e\n                    プレゼンテーション\n                \u003c/p\u003e\n            \u003c/div\u003e\n            \n            \u003cdiv class=\"summary-card\"\u003e\n                \u003cdiv class=\"card-icon\"\u003e📚\u003c/div\u003e\n                \u003ch3 class=\"card-title\"\u003e教育\u003c/h3\u003e\n                \u003cp class=\"card-description\"\u003e\n                    \u003cspan class=\"highlight\"\u003e効果的な学習\u003c/span\u003e体験を\u003cbr\u003e\n                    提供\n                \u003c/p\u003e\n            \u003c/div\u003e\n            \n            \u003cdiv class=\"summary-card\"\u003e\n                \u003cdiv class=\"card-icon\"\u003e⚡\u003c/div\u003e\n                \u003ch3 class=\"card-title\"\u003e技術\u003c/h3\u003e\n                \u003cp class=\"card-description\"\u003e\n                    技術ドキュメントを\u003cbr\u003e\n                    \u003cspan class=\"highlight\"\u003e分かりやすく\u003c/span\u003e共有\n                \u003c/p\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n        \n        \u003cdiv class=\"cta-section\"\u003e\n            \u003cdiv class=\"sparkle sparkle-1\"\u003e✨\u003c/div\u003e\n            \u003cdiv class=\"sparkle sparkle-2\"\u003e⭐\u003c/div\u003e\n            \n            \u003ch2 class=\"cta-title\"\u003e今すぐ始めよう！\u003c/h2\u003e\n            \u003cp class=\"cta-text\"\u003e\n                今すぐ始めて、美しいスライドショーを作成しましょう！\n            \u003c/p\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$L13\",null,{\"slug\":\"use-cases\",\"currentPage\":6,\"totalPages\":7,\"slideContent\":\"$14\"}]\n"])</script><script>self.__next_f.push([1,"a:null\n"])</script><script>self.__next_f.push([1,"e:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n9:null\n"])</script><script>self.__next_f.push([1,"12:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"HTML Slideshow Viewer\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"A Next.js application for viewing HTML slideshows\"}],[\"$\",\"meta\",\"2\",{\"name\":\"Strict-Transport-Security\",\"content\":\"max-age=31536000; includeSubDomains; preload\"}],[\"$\",\"meta\",\"3\",{\"name\":\"X-Frame-Options\",\"content\":\"DENY\"}],[\"$\",\"meta\",\"4\",{\"name\":\"X-Content-Type-Options\",\"content\":\"nosniff\"}],[\"$\",\"meta\",\"5\",{\"name\":\"X-DNS-Prefetch-Control\",\"content\":\"off\"}],[\"$\",\"meta\",\"6\",{\"name\":\"X-Download-Options\",\"content\":\"noopen\"}],[\"$\",\"meta\",\"7\",{\"name\":\"X-Permitted-Cross-Domain-Policies\",\"content\":\"none\"}],[\"$\",\"meta\",\"8\",{\"name\":\"Referrer-Policy\",\"content\":\"strict-origin-when-cross-origin\"}],[\"$\",\"meta\",\"9\",{\"name\":\"Permissions-Policy\",\"content\":\"camera=(), microphone=(), geolocation=(), payment=()\"}],[\"$\",\"meta\",\"10\",{\"name\":\"Cross-Origin-Embedder-Policy\",\"content\":\"require-corp\"}],[\"$\",\"meta\",\"11\",{\"name\":\"Cross-Origin-Opener-Policy\",\"content\":\"same-origin\"}],[\"$\",\"meta\",\"12\",{\"name\":\"Cross-Origin-Resource-Policy\",\"content\":\"same-site\"}],[\"$\",\"meta\",\"13\",{\"name\":\"Content-Security-Policy\",\"content\":\"default-src 'self'; script-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; style-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests\"}],[\"$\",\"link\",\"14\",{\"rel\":\"icon\",\"href\":\"/slideshow-html/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}]],\"error\":null,\"digest\":\"$undefined\"}\nc:{\"metadata\":\"$12:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

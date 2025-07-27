@@ -1,0 +1,416 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/slideshow-html/_next/static/css/bea8e1239a69bd50.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/slideshow-html/_next/static/chunks/webpack-76470da6a700b071.js"/><script src="/slideshow-html/_next/static/chunks/4bd1b696-4764744474983ccd.js" async=""></script><script src="/slideshow-html/_next/static/chunks/684-4b717961979d3538.js" async=""></script><script src="/slideshow-html/_next/static/chunks/main-app-a8f3314847133cf9.js" async=""></script><script src="/slideshow-html/_next/static/chunks/app/layout-0f5856922dda0942.js" async=""></script><script src="/slideshow-html/_next/static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js" async=""></script><meta name="next-size-adjust" content=""/><title>HTML Slideshow Viewer</title><meta name="description" content="A Next.js application for viewing HTML slideshows"/><meta name="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload"/><meta name="X-Frame-Options" content="DENY"/><meta name="X-Content-Type-Options" content="nosniff"/><meta name="X-DNS-Prefetch-Control" content="off"/><meta name="X-Download-Options" content="noopen"/><meta name="X-Permitted-Cross-Domain-Policies" content="none"/><meta name="Referrer-Policy" content="strict-origin-when-cross-origin"/><meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/><meta name="Cross-Origin-Embedder-Policy" content="require-corp"/><meta name="Cross-Origin-Opener-Policy" content="same-origin"/><meta name="Cross-Origin-Resource-Policy" content="same-site"/><meta name="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;nonce-+iq7E6PP0snxGETwDpYqzw==&#x27;; style-src &#x27;self&#x27; &#x27;nonce-+iq7E6PP0snxGETwDpYqzw==&#x27;; img-src &#x27;self&#x27; data: blob:; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;; frame-ancestors &#x27;none&#x27;; upgrade-insecure-requests"/><link rel="icon" href="/slideshow-html/favicon.ico" type="image/x-icon" sizes="16x16"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/slideshow-html/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86"><div class="w-screen h-screen bg-black flex items-center justify-center cursor-pointer overflow-hidden" title="次へ進む"><div style="width:1280px;height:720px;transform:scale(1);transform-origin:center center"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;実装手順とベストプラクティス&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: &#x27;Hiragino Sans&#x27;, &#x27;Yu Gothic&#x27;, &#x27;Meiryo&#x27;, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 1s ease-out;
+            box-sizing: border-box;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .implementation-badge {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #00b894;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(0, 184, 148, 0.5); }
+            to { box-shadow: 0 0 20px rgba(0, 184, 148, 0.8); }
+        }
+        
+        .title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+            line-height: 1.2;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            flex: 1;
+        }
+        
+        .steps-section {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+        
+        .additional-section {
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .section-card {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .section-card::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffeaa7;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            animation: slideInUp 0.6s ease-out calc(1s + var(--delay)) both;
+        }
+        
+        .step-item:nth-child(1) { --delay: 0s; }
+        .step-item:nth-child(2) { --delay: 0.2s; }
+        .step-item:nth-child(3) { --delay: 0.4s; }
+        
+        .step-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .step-number {
+            background: #ffeaa7;
+            color: #74b9ff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #ffeaa7;
+        }
+        
+        .step-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .additional-features {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 12px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border-left: 3px solid #00cec9;
+            animation: slideInRight 0.6s ease-out calc(1.2s + var(--delay)) both;
+        }
+        
+        .feature-item:nth-child(1) { --delay: 0s; }
+        .feature-item:nth-child(2) { --delay: 0.2s; }
+        .feature-item:nth-child(3) { --delay: 0.4s; }
+        .feature-item:nth-child(4) { --delay: 0.6s; }
+        
+        .feature-icon {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffeaa7;
+            margin-bottom: 2px;
+        }
+        
+        .feature-description {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            line-height: 1.3;
+        }
+        
+        .cta-section {
+            background: rgba(116, 185, 255, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 15px;
+            border: 2px solid #74b9ff;
+            animation: bounceIn 1.5s ease-out 2s both;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .cta-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #ffeaa7;
+        }
+        
+        .cta-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;slide&quot;&gt;
+        &lt;div class=&quot;implementation-badge&quot;&gt;⚙️ 実装ガイド&lt;/div&gt;
+        
+        &lt;h1 class=&quot;title&quot;&gt;実装手順とベストプラクティス&lt;/h1&gt;
+        
+        &lt;div class=&quot;content-layout&quot;&gt;
+            &lt;div class=&quot;steps-section&quot;&gt;
+                &lt;div class=&quot;section-card&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;🚀 3ステップで開始&lt;/h2&gt;
+                    &lt;div class=&quot;steps-list&quot;&gt;
+                        &lt;div class=&quot;step-item&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;1&lt;/div&gt;
+                            &lt;div class=&quot;step-content&quot;&gt;
+                                &lt;div class=&quot;step-title&quot;&gt;セットアップ&lt;/div&gt;
+                                &lt;div class=&quot;step-description&quot;&gt;
+                                    Next.jsアプリケーションの&lt;span class=&quot;highlight&quot;&gt;環境構築&lt;/span&gt;と
+                                    依存関係のインストール
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;step-item&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;2&lt;/div&gt;
+                            &lt;div class=&quot;step-content&quot;&gt;
+                                &lt;div class=&quot;step-title&quot;&gt;HTMLファイル作成&lt;/div&gt;
+                                &lt;div class=&quot;step-description&quot;&gt;
+                                    &lt;span class=&quot;highlight&quot;&gt;1280×720px&lt;/span&gt;サイズに最適化された
+                                    スライドHTMLファイルの作成
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;step-item&quot;&gt;
+                            &lt;div class=&quot;step-number&quot;&gt;3&lt;/div&gt;
+                            &lt;div class=&quot;step-content&quot;&gt;
+                                &lt;div class=&quot;step-title&quot;&gt;公開・共有&lt;/div&gt;
+                                &lt;div class=&quot;step-description&quot;&gt;
+                                    静的サイト生成で&lt;span class=&quot;highlight&quot;&gt;高速配信&lt;/span&gt;
+                                    実現とチーム共有
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;cta-section&quot;&gt;
+                        &lt;div class=&quot;cta-title&quot;&gt;⏱️ 開始から完了まで&lt;/div&gt;
+                        &lt;div class=&quot;cta-text&quot;&gt;
+                            わずか&lt;span class=&quot;highlight&quot;&gt;30分&lt;/span&gt;で最初のプレゼンテーションが完成
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;additional-section&quot;&gt;
+                &lt;div class=&quot;section-card&quot;&gt;
+                    &lt;h2 class=&quot;section-title&quot;&gt;💡 追加機能とメリット&lt;/h2&gt;
+                    &lt;div class=&quot;additional-features&quot;&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;div class=&quot;feature-icon&quot;&gt;⚡&lt;/div&gt;
+                            &lt;div class=&quot;feature-content&quot;&gt;
+                                &lt;div class=&quot;feature-title&quot;&gt;高速読み込み&lt;/div&gt;
+                                &lt;div class=&quot;feature-description&quot;&gt;
+                                    最適化されたアセットで&lt;span class=&quot;highlight&quot;&gt;瞬時に表示&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;div class=&quot;feature-icon&quot;&gt;📝&lt;/div&gt;
+                            &lt;div class=&quot;feature-content&quot;&gt;
+                                &lt;div class=&quot;feature-title&quot;&gt;リリースノート管理&lt;/div&gt;
+                                &lt;div class=&quot;feature-description&quot;&gt;
+                                    機能追加やバグ修正の&lt;span class=&quot;highlight&quot;&gt;効果的な伝達&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;div class=&quot;feature-icon&quot;&gt;📚&lt;/div&gt;
+                            &lt;div class=&quot;feature-content&quot;&gt;
+                                &lt;div class=&quot;feature-title&quot;&gt;教育効果向上&lt;/div&gt;
+                                &lt;div class=&quot;feature-description&quot;&gt;
+                                    復習用資料配布で&lt;span class=&quot;highlight&quot;&gt;学習定着率3倍&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;feature-item&quot;&gt;
+                            &lt;div class=&quot;feature-icon&quot;&gt;🎨&lt;/div&gt;
+                            &lt;div class=&quot;feature-content&quot;&gt;
+                                &lt;div class=&quot;feature-title&quot;&gt;プロフェッショナル品質&lt;/div&gt;
+                                &lt;div class=&quot;feature-description&quot;&gt;
+                                    統一デザインで&lt;span class=&quot;highlight&quot;&gt;ブランド価値向上&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-full border-0" title="Slide 7 (Full Screen)" sandbox="allow-scripts"></iframe></div></div><!--$--><!--/$--><!--$--><!--/$--><script src="/slideshow-html/_next/static/chunks/webpack-76470da6a700b071.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[5693,[\"177\",\"static/chunks/app/layout-0f5856922dda0942.js\"],\"SecurityProvider\"]\n3:I[7555,[],\"\"]\n4:I[1295,[],\"\"]\n6:I[9665,[],\"MetadataBoundary\"]\n8:I[9665,[],\"OutletBoundary\"]\nb:I[4911,[],\"AsyncMetadataOutlet\"]\nd:I[9665,[],\"ViewportBoundary\"]\nf:I[6614,[],\"\"]\n:HL[\"/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/slideshow-html/_next/static/css/bea8e1239a69bd50.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"08dMET7hb8dELKFO1cHsW\",\"p\":\"/slideshow-html\",\"c\":[\"\",\"presentations\",\"use-cases\",\"7\",\"full-screen\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"presentations\",{\"children\":[[\"slug\",\"use-cases\",\"d\"],{\"children\":[[\"page\",\"7\",\"d\"],{\"children\":[\"full-screen\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/slideshow-html/_next/static/css/bea8e1239a69bd50.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86\",\"children\":[\"$\",\"$L2\",null,{\"nonce\":\"+iq7E6PP0snxGETwDpYqzw==\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]}]]}],{\"children\":[\"presentations\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"use-cases\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"page\",\"7\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"full-screen\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[\"$\",\"$L6\",null,{\"children\":\"$L7\"}],null,[\"$\",\"$L8\",null,{\"children\":[\"$L9\",\"$La\",[\"$\",\"$Lb\",null,{\"promise\":\"$@c\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"xCSeG4xDxr7Y5pQh-mwQ8\",{\"children\":[[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"10:\"$Sreact.suspense\"\n11:I[4911,[],\"AsyncMetadata\"]\n13:I[9168,[\"187\",\"static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js\"],\"FullScreenViewer\"]\n7:[\"$\",\"$10\",null,{\"fallback\":null,\"children\":[\"$\",\"$L11\",null,{\"promise\":\"$@12\"}]}]\n14:T3635,"])</script><script>self.__next_f.push([1,"\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"ja\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003e実装手順とベストプラクティス\u003c/title\u003e\n    \u003cstyle\u003e\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        \n        body {\n            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;\n            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);\n            color: white;\n            width: 1280px;\n            height: 720px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            padding: 0;\n            margin: 0;\n            overflow: hidden;\n        }\n        \n        .slide {\n            width: 1280px;\n            height: 720px;\n            background: rgba(255,255,255,0.1);\n            border-radius: 15px;\n            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);\n            padding: 20px 40px;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            position: relative;\n            overflow: hidden;\n            animation: slideInUp 1s ease-out;\n            box-sizing: border-box;\n        }\n        \n        @keyframes slideInUp {\n            from {\n                opacity: 0;\n                transform: translateY(50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        .implementation-badge {\n            position: absolute;\n            top: 20px;\n            right: 30px;\n            background: #00b894;\n            color: white;\n            padding: 8px 16px;\n            border-radius: 20px;\n            font-size: 0.9rem;\n            font-weight: bold;\n            animation: glow 2s ease-in-out infinite alternate;\n        }\n        \n        @keyframes glow {\n            from { box-shadow: 0 0 5px rgba(0, 184, 148, 0.5); }\n            to { box-shadow: 0 0 20px rgba(0, 184, 148, 0.8); }\n        }\n        \n        .title {\n            font-size: 2.2rem;\n            font-weight: bold;\n            text-align: center;\n            margin-bottom: 20px;\n            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\n            animation: slideInDown 1s ease-out 0.3s both;\n            line-height: 1.2;\n        }\n        \n        @keyframes slideInDown {\n            from {\n                opacity: 0;\n                transform: translateY(-50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        .content-layout {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n            gap: 25px;\n            flex: 1;\n        }\n        \n        .steps-section {\n            animation: slideInLeft 1s ease-out 0.5s both;\n        }\n        \n        .additional-section {\n            animation: slideInRight 1s ease-out 0.7s both;\n        }\n        \n        @keyframes slideInLeft {\n            from {\n                opacity: 0;\n                transform: translateX(-50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateX(0);\n            }\n        }\n        \n        @keyframes slideInRight {\n            from {\n                opacity: 0;\n                transform: translateX(50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateX(0);\n            }\n        }\n        \n        .section-card {\n            background: rgba(255,255,255,0.15);\n            padding: 20px;\n            border-radius: 15px;\n            backdrop-filter: blur(10px);\n            border: 2px solid rgba(255,255,255,0.3);\n            position: relative;\n            overflow: hidden;\n            display: flex;\n            flex-direction: column;\n            height: 100%;\n        }\n        \n        .section-card::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: -100%;\n            width: 100%;\n            height: 100%;\n            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);\n            animation: scan 3s infinite;\n        }\n        \n        @keyframes scan {\n            0% { left: -100%; }\n            100% { left: 100%; }\n        }\n        \n        .section-title {\n            font-size: 1.4rem;\n            font-weight: bold;\n            margin-bottom: 15px;\n            color: #ffeaa7;\n            text-align: center;\n            position: relative;\n            z-index: 2;\n        }\n        \n        .steps-list {\n            display: flex;\n            flex-direction: column;\n            gap: 15px;\n            position: relative;\n            z-index: 2;\n        }\n        \n        .step-item {\n            display: flex;\n            align-items: center;\n            background: rgba(255,255,255,0.1);\n            padding: 12px 15px;\n            border-radius: 12px;\n            border: 1px solid rgba(255,255,255,0.3);\n            transition: all 0.3s ease;\n            animation: slideInUp 0.6s ease-out calc(1s + var(--delay)) both;\n        }\n        \n        .step-item:nth-child(1) { --delay: 0s; }\n        .step-item:nth-child(2) { --delay: 0.2s; }\n        .step-item:nth-child(3) { --delay: 0.4s; }\n        \n        .step-item:hover {\n            background: rgba(255,255,255,0.2);\n            transform: translateX(5px);\n        }\n        \n        .step-number {\n            background: #ffeaa7;\n            color: #74b9ff;\n            width: 30px;\n            height: 30px;\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            margin-right: 15px;\n            font-size: 1rem;\n            flex-shrink: 0;\n        }\n        \n        .step-content {\n            flex: 1;\n        }\n        \n        .step-title {\n            font-size: 1.1rem;\n            font-weight: bold;\n            margin-bottom: 4px;\n            color: #ffeaa7;\n        }\n        \n        .step-description {\n            font-size: 0.9rem;\n            opacity: 0.9;\n            line-height: 1.4;\n        }\n        \n        .additional-features {\n            position: relative;\n            z-index: 2;\n        }\n        \n        .feature-item {\n            display: flex;\n            align-items: flex-start;\n            margin: 12px 0;\n            padding: 10px;\n            background: rgba(255,255,255,0.1);\n            border-radius: 8px;\n            border-left: 3px solid #00cec9;\n            animation: slideInRight 0.6s ease-out calc(1.2s + var(--delay)) both;\n        }\n        \n        .feature-item:nth-child(1) { --delay: 0s; }\n        .feature-item:nth-child(2) { --delay: 0.2s; }\n        .feature-item:nth-child(3) { --delay: 0.4s; }\n        .feature-item:nth-child(4) { --delay: 0.6s; }\n        \n        .feature-icon {\n            font-size: 1.2rem;\n            margin-right: 10px;\n            margin-top: 2px;\n            flex-shrink: 0;\n            animation: bounce 2s ease-in-out infinite;\n        }\n        \n        @keyframes bounce {\n            0%, 100% { transform: translateY(0); }\n            50% { transform: translateY(-3px); }\n        }\n        \n        .feature-content {\n            flex: 1;\n        }\n        \n        .feature-title {\n            font-size: 1rem;\n            font-weight: bold;\n            color: #ffeaa7;\n            margin-bottom: 2px;\n        }\n        \n        .feature-description {\n            font-size: 0.8rem;\n            opacity: 0.9;\n            line-height: 1.3;\n        }\n        \n        .cta-section {\n            background: rgba(116, 185, 255, 0.2);\n            padding: 12px;\n            border-radius: 10px;\n            text-align: center;\n            margin-top: 15px;\n            border: 2px solid #74b9ff;\n            animation: bounceIn 1.5s ease-out 2s both;\n            position: relative;\n            z-index: 2;\n        }\n        \n        @keyframes bounceIn {\n            0% { opacity: 0; transform: scale(0.3); }\n            50% { transform: scale(1.05); }\n            70% { transform: scale(0.9); }\n            100% { opacity: 1; transform: scale(1); }\n        }\n        \n        .cta-title {\n            font-size: 1.1rem;\n            font-weight: bold;\n            margin-bottom: 6px;\n            color: #ffeaa7;\n        }\n        \n        .cta-text {\n            font-size: 0.9rem;\n            line-height: 1.4;\n        }\n        \n        .highlight {\n            color: #ffeaa7;\n            font-weight: bold;\n        }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv class=\"slide\"\u003e\n        \u003cdiv class=\"implementation-badge\"\u003e⚙️ 実装ガイド\u003c/div\u003e\n        \n        \u003ch1 class=\"title\"\u003e実装手順とベストプラクティス\u003c/h1\u003e\n        \n        \u003cdiv class=\"content-layout\"\u003e\n            \u003cdiv class=\"steps-section\"\u003e\n                \u003cdiv class=\"section-card\"\u003e\n                    \u003ch2 class=\"section-title\"\u003e🚀 3ステップで開始\u003c/h2\u003e\n                    \u003cdiv class=\"steps-list\"\u003e\n                        \u003cdiv class=\"step-item\"\u003e\n                            \u003cdiv class=\"step-number\"\u003e1\u003c/div\u003e\n                            \u003cdiv class=\"step-content\"\u003e\n                                \u003cdiv class=\"step-title\"\u003eセットアップ\u003c/div\u003e\n                                \u003cdiv class=\"step-description\"\u003e\n                                    Next.jsアプリケーションの\u003cspan class=\"highlight\"\u003e環境構築\u003c/span\u003eと\n                                    依存関係のインストール\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"step-item\"\u003e\n                            \u003cdiv class=\"step-number\"\u003e2\u003c/div\u003e\n                            \u003cdiv class=\"step-content\"\u003e\n                                \u003cdiv class=\"step-title\"\u003eHTMLファイル作成\u003c/div\u003e\n                                \u003cdiv class=\"step-description\"\u003e\n                                    \u003cspan class=\"highlight\"\u003e1280×720px\u003c/span\u003eサイズに最適化された\n                                    スライドHTMLファイルの作成\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"step-item\"\u003e\n                            \u003cdiv class=\"step-number\"\u003e3\u003c/div\u003e\n                            \u003cdiv class=\"step-content\"\u003e\n                                \u003cdiv class=\"step-title\"\u003e公開・共有\u003c/div\u003e\n                                \u003cdiv class=\"step-description\"\u003e\n                                    静的サイト生成で\u003cspan class=\"highlight\"\u003e高速配信\u003c/span\u003e\n                                    実現とチーム共有\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                    \u003c/div\u003e\n                    \n                    \u003cdiv class=\"cta-section\"\u003e\n                        \u003cdiv class=\"cta-title\"\u003e⏱️ 開始から完了まで\u003c/div\u003e\n                        \u003cdiv class=\"cta-text\"\u003e\n                            わずか\u003cspan class=\"highlight\"\u003e30分\u003c/span\u003eで最初のプレゼンテーションが完成\n                        \u003c/div\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n            \n            \u003cdiv class=\"additional-section\"\u003e\n                \u003cdiv class=\"section-card\"\u003e\n                    \u003ch2 class=\"section-title\"\u003e💡 追加機能とメリット\u003c/h2\u003e\n                    \u003cdiv class=\"additional-features\"\u003e\n                        \u003cdiv class=\"feature-item\"\u003e\n                            \u003cdiv class=\"feature-icon\"\u003e⚡\u003c/div\u003e\n                            \u003cdiv class=\"feature-content\"\u003e\n                                \u003cdiv class=\"feature-title\"\u003e高速読み込み\u003c/div\u003e\n                                \u003cdiv class=\"feature-description\"\u003e\n                                    最適化されたアセットで\u003cspan class=\"highlight\"\u003e瞬時に表示\u003c/span\u003e\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"feature-item\"\u003e\n                            \u003cdiv class=\"feature-icon\"\u003e📝\u003c/div\u003e\n                            \u003cdiv class=\"feature-content\"\u003e\n                                \u003cdiv class=\"feature-title\"\u003eリリースノート管理\u003c/div\u003e\n                                \u003cdiv class=\"feature-description\"\u003e\n                                    機能追加やバグ修正の\u003cspan class=\"highlight\"\u003e効果的な伝達\u003c/span\u003e\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"feature-item\"\u003e\n                            \u003cdiv class=\"feature-icon\"\u003e📚\u003c/div\u003e\n                            \u003cdiv class=\"feature-content\"\u003e\n                                \u003cdiv class=\"feature-title\"\u003e教育効果向上\u003c/div\u003e\n                                \u003cdiv class=\"feature-description\"\u003e\n                                    復習用資料配布で\u003cspan class=\"highlight\"\u003e学習定着率3倍\u003c/span\u003e\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"feature-item\"\u003e\n                            \u003cdiv class=\"feature-icon\"\u003e🎨\u003c/div\u003e\n                            \u003cdiv class=\"feature-content\"\u003e\n                                \u003cdiv class=\"feature-title\"\u003eプロフェッショナル品質\u003c/div\u003e\n                                \u003cdiv class=\"feature-description\"\u003e\n                                    統一デザインで\u003cspan class=\"highlight\"\u003eブランド価値向上\u003c/span\u003e\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$L13\",null,{\"slug\":\"use-cases\",\"currentPage\":7,\"totalPages\":7,\"slideContent\":\"$14\"}]\n"])</script><script>self.__next_f.push([1,"a:null\n"])</script><script>self.__next_f.push([1,"e:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n9:null\n"])</script><script>self.__next_f.push([1,"12:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"HTML Slideshow Viewer\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"A Next.js application for viewing HTML slideshows\"}],[\"$\",\"meta\",\"2\",{\"name\":\"Strict-Transport-Security\",\"content\":\"max-age=31536000; includeSubDomains; preload\"}],[\"$\",\"meta\",\"3\",{\"name\":\"X-Frame-Options\",\"content\":\"DENY\"}],[\"$\",\"meta\",\"4\",{\"name\":\"X-Content-Type-Options\",\"content\":\"nosniff\"}],[\"$\",\"meta\",\"5\",{\"name\":\"X-DNS-Prefetch-Control\",\"content\":\"off\"}],[\"$\",\"meta\",\"6\",{\"name\":\"X-Download-Options\",\"content\":\"noopen\"}],[\"$\",\"meta\",\"7\",{\"name\":\"X-Permitted-Cross-Domain-Policies\",\"content\":\"none\"}],[\"$\",\"meta\",\"8\",{\"name\":\"Referrer-Policy\",\"content\":\"strict-origin-when-cross-origin\"}],[\"$\",\"meta\",\"9\",{\"name\":\"Permissions-Policy\",\"content\":\"camera=(), microphone=(), geolocation=(), payment=()\"}],[\"$\",\"meta\",\"10\",{\"name\":\"Cross-Origin-Embedder-Policy\",\"content\":\"require-corp\"}],[\"$\",\"meta\",\"11\",{\"name\":\"Cross-Origin-Opener-Policy\",\"content\":\"same-origin\"}],[\"$\",\"meta\",\"12\",{\"name\":\"Cross-Origin-Resource-Policy\",\"content\":\"same-site\"}],[\"$\",\"meta\",\"13\",{\"name\":\"Content-Security-Policy\",\"content\":\"default-src 'self'; script-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; style-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests\"}],[\"$\",\"link\",\"14\",{\"rel\":\"icon\",\"href\":\"/slideshow-html/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}]],\"error\":null,\"digest\":\"$undefined\"}\nc:{\"metadata\":\"$12:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

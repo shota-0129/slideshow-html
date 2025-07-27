@@ -1,0 +1,514 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"08dMET7hb8dELKFO1cHsW","p":"/slideshow-html","c":["","presentations","company-presentation","5"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","company-presentation","d"],{"children":[["page","5","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"+iq7E6PP0snxGETwDpYqzw==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","company-presentation","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","5","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","N854uMRPNUPxeDf3YWoue",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[1418,["874","static/chunks/874-717cade55bc9f269.js","591","static/chunks/591-1ace861052514e33.js","436","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/page-ce1a0f903d7accee.js"],"PresentationViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T3d82,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>実装計画とロードマップ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #00b894 0%, #55a3ff 100%);
+            color: white;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 15px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+            box-sizing: border-box;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+            line-height: 1.1;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .roadmap-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex: 1;
+            align-items: stretch;
+        }
+        
+        .timeline-section {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .resources-section {
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .section-card {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .section-title {
+            font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+            font-weight: bold;
+            margin-bottom: 4%;
+            color: #ffeaa7;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            line-height: 1.2;
+        }
+        
+        .timeline {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 3% 0;
+            animation: slideInUp 0.6s ease-out calc(0.9s + var(--delay)) both;
+        }
+        
+        .timeline-item:nth-child(1) { --delay: 0s; }
+        .timeline-item:nth-child(2) { --delay: 0.1s; }
+        .timeline-item:nth-child(3) { --delay: 0.2s; }
+        .timeline-item:nth-child(4) { --delay: 0.3s; }
+        .timeline-item:nth-child(5) { --delay: 0.4s; }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .timeline-marker {
+            background: #fd79a8;
+            color: white;
+            width: clamp(30px, 6vw, 50px);
+            height: clamp(30px, 6vw, 50px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 3%;
+            flex-shrink: 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-phase {
+            font-size: clamp(1rem, 1.8vw, 1.5rem);
+            font-weight: bold;
+            color: #74b9ff;
+            margin-bottom: 1%;
+            line-height: 1.2;
+        }
+        
+        .timeline-description {
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .resource-item {
+            background: rgba(255,255,255,0.1);
+            padding: 4%;
+            border-radius: 15px;
+            border-left: 5px solid #ffeaa7;
+            transition: all 0.3s ease;
+            animation: slideInRight 0.6s ease-out calc(1.1s + var(--delay)) both;
+        }
+        
+        .resource-item:nth-child(1) { --delay: 0s; }
+        .resource-item:nth-child(2) { --delay: 0.1s; }
+        .resource-item:nth-child(3) { --delay: 0.2s; }
+        .resource-item:nth-child(4) { --delay: 0.3s; }
+        
+        .resource-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(10px);
+        }
+        
+        .resource-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .resource-icon {
+            font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+            margin-right: 3%;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .resource-title {
+            font-size: clamp(1rem, 1.8vw, 1.5rem);
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        .resource-description {
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        
+        .success-metrics {
+            background: rgba(116, 185, 255, 0.2);
+            padding: 8px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 8px;
+            border: 2px solid #74b9ff;
+            animation: bounceIn 1.5s ease-out 1.5s both;
+            height: 130px;
+            overflow: hidden;
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .metrics-title {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: #ffeaa7;
+            line-height: 1.2;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 8px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffeaa7;
+            margin-bottom: 4px;
+            animation: countUp 2s ease-out 2s both;
+            line-height: 1.1;
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #74b9ff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(116, 185, 255, 0.5); }
+            to { box-shadow: 0 0 20px rgba(116, 185, 255, 0.8); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="plan-badge">📋 実装計画</div>
+        
+        <h1 class="title">実装計画とロードマップ</h1>
+        
+        <div class="roadmap-container">
+            <div class="timeline-section">
+                <div class="section-card">
+                    <h2 class="section-title">🗓️ 段階的導入スケジュール</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <div class="timeline-phase">準備段階（1週間）</div>
+                                <div class="timeline-description">技術検証・環境構築・サンプル作成</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2</div>
+                            <div class="timeline-content">
+                                <div class="timeline-phase">パイロット導入（2週間）</div>
+                                <div class="timeline-description">開発チームでの試験運用・フィードバック収集</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">3</div>
+                            <div class="timeline-content">
+                                <div class="timeline-phase">部分展開（1ヶ月）</div>
+                                <div class="timeline-description">営業・マーケティング部門での導入</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">✓</div>
+                            <div class="timeline-content">
+                                <div class="timeline-phase">全社展開・運用開始</div>
+                                <div class="timeline-description">全部門導入・本格運用</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resources-section">
+                <div class="section-card">
+                    <h2 class="section-title">📦 必要リソース</h2>
+                    <div class="resources-grid">
+                        <div class="resource-item">
+                            <div class="resource-header">
+                                <span class="resource-icon">👥</span>
+                                <h3 class="resource-title">人的リソース</h3>
+                            </div>
+                            <p class="resource-description">
+                                開発者1名（週2時間）、デザイナー1名（週1時間）
+                            </p>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-header">
+                                <span class="resource-icon">🖥️</span>
+                                <h3 class="resource-title">技術インフラ</h3>
+                            </div>
+                            <p class="resource-description">
+                                既存サーバー活用、追加コストなし
+                            </p>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-header">
+                                <span class="resource-icon">📚</span>
+                                <h3 class="resource-title">教育・研修</h3>
+                            </div>
+                            <p class="resource-description">
+                                2時間の基本研修、ドキュメント整備
+                            </p>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-header">
+                                <span class="resource-icon">🔧</span>
+                                <h3 class="resource-title">サポート体制</h3>
+                            </div>
+                            <p class="resource-description">
+                                社内ヘルプデスク、FAQサイト構築
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <style>
+        @media (max-width: 768px) {
+            .slide {
+                padding: 4% 5%;
+            }
+            
+            .roadmap-container {
+                grid-template-columns: 1fr;
+                gap: 3%;
+            }
+            
+            .timeline-item {
+                margin: 3% 0;
+            }
+            
+            .resource-item {
+                padding: 3%;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3%;
+            }
+        }
+    </style>
+</body>
+</html>5:["$","$L13",null,{"slug":"company-presentation","currentPage":5,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; style-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}

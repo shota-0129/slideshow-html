@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="ja"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/slideshow-html/_next/static/css/bea8e1239a69bd50.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/slideshow-html/_next/static/chunks/webpack-76470da6a700b071.js"/><script src="/slideshow-html/_next/static/chunks/4bd1b696-4764744474983ccd.js" async=""></script><script src="/slideshow-html/_next/static/chunks/684-4b717961979d3538.js" async=""></script><script src="/slideshow-html/_next/static/chunks/main-app-a8f3314847133cf9.js" async=""></script><script src="/slideshow-html/_next/static/chunks/app/layout-0f5856922dda0942.js" async=""></script><script src="/slideshow-html/_next/static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js" async=""></script><meta name="next-size-adjust" content=""/><title>HTML Slideshow Viewer</title><meta name="description" content="A Next.js application for viewing HTML slideshows"/><meta name="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload"/><meta name="X-Frame-Options" content="DENY"/><meta name="X-Content-Type-Options" content="nosniff"/><meta name="X-DNS-Prefetch-Control" content="off"/><meta name="X-Download-Options" content="noopen"/><meta name="X-Permitted-Cross-Domain-Policies" content="none"/><meta name="Referrer-Policy" content="strict-origin-when-cross-origin"/><meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/><meta name="Cross-Origin-Embedder-Policy" content="require-corp"/><meta name="Cross-Origin-Opener-Policy" content="same-origin"/><meta name="Cross-Origin-Resource-Policy" content="same-site"/><meta name="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;nonce-+iq7E6PP0snxGETwDpYqzw==&#x27;; style-src &#x27;self&#x27; &#x27;nonce-+iq7E6PP0snxGETwDpYqzw==&#x27;; img-src &#x27;self&#x27; data: blob:; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;; frame-ancestors &#x27;none&#x27;; upgrade-insecure-requests"/><link rel="icon" href="/slideshow-html/favicon.ico" type="image/x-icon" sizes="16x16"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/slideshow-html/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86"><div class="w-screen h-screen bg-black flex items-center justify-center cursor-pointer overflow-hidden" title="次へ進む"><div style="width:1280px;height:720px;transform:scale(1);transform-origin:center center"><iframe srcDoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;こんな人におすすめ&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: &#x27;Hiragino Sans&#x27;, &#x27;Yu Gothic&#x27;, &#x27;Meiryo&#x27;, sans-serif;
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: 4.5vh 5vw; /* ~32px vertical, ~64px horizontal */
+            animation: fadeIn 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: clamp(20px, 4vw, 40px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(15px, 2.5vw, 25px);
+            margin-top: clamp(15px, 3vw, 25px);
+            flex: 1;
+        }
+        
+        .persona-card {
+            background: rgba(255,255,255,0.15);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: clamp(15px, 2.5vw, 20px);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+            animation: slideInUp 1s ease-out calc(0.6s + var(--delay)) both;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .persona-card:nth-child(1) { --delay: 0s; }
+        .persona-card:nth-child(2) { --delay: 0.2s; }
+        .persona-card:nth-child(3) { --delay: 0.4s; }
+        .persona-card:nth-child(4) { --delay: 0.6s; }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .persona-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        .persona-card::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .persona-card:hover::before {
+            left: 100%;
+        }
+        
+        .persona-avatar {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: clamp(8px, 1.5vw, 15px);
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .persona-title {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: bold;
+            margin-bottom: clamp(6px, 1.2vw, 10px);
+            color: #2d3436;
+            line-height: 1.2;
+        }
+        
+        .persona-description {
+            font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+            line-height: 1.4;
+            opacity: 0.9;
+            color: #2d3436;
+            flex: 1;
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            opacity: 0.3;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .icon-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .icon-2 { top: 20%; right: 8%; animation-delay: 1s; }
+        .icon-3 { bottom: 30%; left: 3%; animation-delay: 2s; }
+        .icon-4 { bottom: 15%; right: 5%; animation-delay: 3s; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;slide-container&quot;&gt;
+        &lt;div class=&quot;floating-elements&quot;&gt;
+            &lt;div class=&quot;floating-icon icon-1&quot;&gt;💼&lt;/div&gt;
+            &lt;div class=&quot;floating-icon icon-2&quot;&gt;🎓&lt;/div&gt;
+            &lt;div class=&quot;floating-icon icon-3&quot;&gt;👨‍💻&lt;/div&gt;
+            &lt;div class=&quot;floating-icon icon-4&quot;&gt;🏢&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h1 class=&quot;title&quot;&gt;こんな人におすすめ&lt;/h1&gt;
+        
+        &lt;div class=&quot;personas-grid&quot;&gt;
+            &lt;div class=&quot;persona-card&quot;&gt;
+                &lt;div class=&quot;persona-avatar&quot;&gt;👨‍💼&lt;/div&gt;
+                &lt;h3 class=&quot;persona-title&quot;&gt;営業・マーケティング担当者&lt;/h3&gt;
+                &lt;p class=&quot;persona-description&quot;&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;提案資料&lt;/span&gt;や&lt;span class=&quot;highlight&quot;&gt;商品説明&lt;/span&gt;を&lt;br&gt;
+                    魅力的に表示したい方。&lt;br&gt;
+                    クライアントへのプレゼンに最適
+                &lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;persona-card&quot;&gt;
+                &lt;div class=&quot;persona-avatar&quot;&gt;👩‍🏫&lt;/div&gt;
+                &lt;h3 class=&quot;persona-title&quot;&gt;教育関係者&lt;/h3&gt;
+                &lt;p class=&quot;persona-description&quot;&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;授業資料&lt;/span&gt;や&lt;span class=&quot;highlight&quot;&gt;研修教材&lt;/span&gt;を&lt;br&gt;
+                    効果的に共有したい先生や&lt;br&gt;
+                    トレーナーの方
+                &lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;persona-card&quot;&gt;
+                &lt;div class=&quot;persona-avatar&quot;&gt;👨‍💻&lt;/div&gt;
+                &lt;h3 class=&quot;persona-title&quot;&gt;エンジニア・開発者&lt;/h3&gt;
+                &lt;p class=&quot;persona-description&quot;&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;技術資料&lt;/span&gt;や&lt;span class=&quot;highlight&quot;&gt;仕様書&lt;/span&gt;を&lt;br&gt;
+                    チーム内で共有したい&lt;br&gt;
+                    開発チームの方
+                &lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;persona-card&quot;&gt;
+                &lt;div class=&quot;persona-avatar&quot;&gt;🏢&lt;/div&gt;
+                &lt;h3 class=&quot;persona-title&quot;&gt;企業・組織&lt;/h3&gt;
+                &lt;p class=&quot;persona-description&quot;&gt;
+                    &lt;span class=&quot;highlight&quot;&gt;社内報告&lt;/span&gt;や&lt;span class=&quot;highlight&quot;&gt;会議資料&lt;/span&gt;を&lt;br&gt;
+                    セキュアに管理・共有したい&lt;br&gt;
+                    組織の方
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;" class="w-full h-full border-0" title="Slide 2 (Full Screen)" sandbox="allow-scripts"></iframe></div></div><!--$--><!--/$--><!--$--><!--/$--><script src="/slideshow-html/_next/static/chunks/webpack-76470da6a700b071.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[5693,[\"177\",\"static/chunks/app/layout-0f5856922dda0942.js\"],\"SecurityProvider\"]\n3:I[7555,[],\"\"]\n4:I[1295,[],\"\"]\n6:I[9665,[],\"MetadataBoundary\"]\n8:I[9665,[],\"OutletBoundary\"]\nb:I[4911,[],\"AsyncMetadataOutlet\"]\nd:I[9665,[],\"ViewportBoundary\"]\nf:I[6614,[],\"\"]\n:HL[\"/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n:HL[\"/slideshow-html/_next/static/css/bea8e1239a69bd50.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"08dMET7hb8dELKFO1cHsW\",\"p\":\"/slideshow-html\",\"c\":[\"\",\"presentations\",\"use-cases\",\"2\",\"full-screen\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"presentations\",{\"children\":[[\"slug\",\"use-cases\",\"d\"],{\"children\":[[\"page\",\"2\",\"d\"],{\"children\":[\"full-screen\",{\"children\":[\"__PAGE__\",{}]}]}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/slideshow-html/_next/static/css/bea8e1239a69bd50.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ja\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86\",\"children\":[\"$\",\"$L2\",null,{\"nonce\":\"+iq7E6PP0snxGETwDpYqzw==\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]}]]}],{\"children\":[\"presentations\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"use-cases\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"page\",\"2\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"full-screen\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",[\"$\",\"$L6\",null,{\"children\":\"$L7\"}],null,[\"$\",\"$L8\",null,{\"children\":[\"$L9\",\"$La\",[\"$\",\"$Lb\",null,{\"promise\":\"$@c\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"v85Lncdf7ng1rtmtNVdHN\",{\"children\":[[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],[\"$\",\"meta\",null,{\"name\":\"next-size-adjust\",\"content\":\"\"}]]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"10:\"$Sreact.suspense\"\n11:I[4911,[],\"AsyncMetadata\"]\n13:I[9168,[\"187\",\"static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js\"],\"FullScreenViewer\"]\n7:[\"$\",\"$10\",null,{\"fallback\":null,\"children\":[\"$\",\"$L11\",null,{\"promise\":\"$@12\"}]}]\n14:T2001,"])</script><script>self.__next_f.push([1,"\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"ja\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eこんな人におすすめ\u003c/title\u003e\n    \u003cstyle\u003e\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        \n        body {\n            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;\n            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);\n            color: white;\n            margin: 0;\n            padding: 0;\n            width: 1280px;\n            height: 720px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            box-sizing: border-box;\n            overflow: hidden;\n        }\n        \n        .slide-container {\n            width: 1280px;\n            height: 720px;\n            padding: 4.5vh 5vw; /* ~32px vertical, ~64px horizontal */\n            animation: fadeIn 1s ease-out;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            box-sizing: border-box;\n            position: relative;\n            overflow: hidden;\n        }\n        \n        @keyframes fadeIn {\n            from { opacity: 0; }\n            to { opacity: 1; }\n        }\n        \n        .title {\n            font-size: clamp(1.8rem, 4vw, 2.8rem);\n            font-weight: bold;\n            text-align: center;\n            margin-bottom: clamp(20px, 4vw, 40px);\n            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\n            animation: slideInDown 1s ease-out 0.3s both;\n        }\n        \n        @keyframes slideInDown {\n            from {\n                opacity: 0;\n                transform: translateY(-50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        .personas-grid {\n            display: grid;\n            grid-template-columns: repeat(2, 1fr);\n            gap: clamp(15px, 2.5vw, 25px);\n            margin-top: clamp(15px, 3vw, 25px);\n            flex: 1;\n        }\n        \n        .persona-card {\n            background: rgba(255,255,255,0.15);\n            padding: clamp(15px, 3vw, 25px);\n            border-radius: clamp(15px, 2.5vw, 20px);\n            backdrop-filter: blur(10px);\n            border: 2px solid rgba(255,255,255,0.2);\n            transition: all 0.4s ease;\n            animation: slideInUp 1s ease-out calc(0.6s + var(--delay)) both;\n            position: relative;\n            overflow: hidden;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            text-align: center;\n        }\n        \n        .persona-card:nth-child(1) { --delay: 0s; }\n        .persona-card:nth-child(2) { --delay: 0.2s; }\n        .persona-card:nth-child(3) { --delay: 0.4s; }\n        .persona-card:nth-child(4) { --delay: 0.6s; }\n        \n        @keyframes slideInUp {\n            from {\n                opacity: 0;\n                transform: translateY(50px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n        \n        .persona-card:hover {\n            transform: translateY(-15px) scale(1.05);\n            box-shadow: 0 25px 50px rgba(0,0,0,0.3);\n            border-color: rgba(255,255,255,0.4);\n        }\n        \n        .persona-card::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: -100%;\n            width: 100%;\n            height: 100%;\n            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);\n            transition: left 0.5s ease;\n        }\n        \n        .persona-card:hover::before {\n            left: 100%;\n        }\n        \n        .persona-avatar {\n            font-size: clamp(2.5rem, 5vw, 3.5rem);\n            margin-bottom: clamp(8px, 1.5vw, 15px);\n            animation: bounce 2s ease-in-out infinite;\n        }\n        \n        @keyframes bounce {\n            0%, 100% { transform: translateY(0); }\n            50% { transform: translateY(-10px); }\n        }\n        \n        .persona-title {\n            font-size: clamp(1rem, 2vw, 1.4rem);\n            font-weight: bold;\n            margin-bottom: clamp(6px, 1.2vw, 10px);\n            color: #2d3436;\n            line-height: 1.2;\n        }\n        \n        .persona-description {\n            font-size: clamp(0.7rem, 1.4vw, 0.9rem);\n            line-height: 1.4;\n            opacity: 0.9;\n            color: #2d3436;\n            flex: 1;\n        }\n        \n        .highlight {\n            background: linear-gradient(90deg, #ff6b6b, #feca57);\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: transparent;\n            background-clip: text;\n            font-weight: bold;\n        }\n        \n        .floating-elements {\n            position: absolute;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            pointer-events: none;\n            z-index: 1;\n        }\n        \n        .floating-icon {\n            position: absolute;\n            font-size: clamp(1.5rem, 2.5vw, 2rem);\n            opacity: 0.3;\n            animation: float 4s ease-in-out infinite;\n        }\n        \n        @keyframes float {\n            0%, 100% { transform: translateY(0px) rotate(0deg); }\n            50% { transform: translateY(-20px) rotate(10deg); }\n        }\n        \n        .icon-1 { top: 10%; left: 5%; animation-delay: 0s; }\n        .icon-2 { top: 20%; right: 8%; animation-delay: 1s; }\n        .icon-3 { bottom: 30%; left: 3%; animation-delay: 2s; }\n        .icon-4 { bottom: 15%; right: 5%; animation-delay: 3s; }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv class=\"slide-container\"\u003e\n        \u003cdiv class=\"floating-elements\"\u003e\n            \u003cdiv class=\"floating-icon icon-1\"\u003e💼\u003c/div\u003e\n            \u003cdiv class=\"floating-icon icon-2\"\u003e🎓\u003c/div\u003e\n            \u003cdiv class=\"floating-icon icon-3\"\u003e👨‍💻\u003c/div\u003e\n            \u003cdiv class=\"floating-icon icon-4\"\u003e🏢\u003c/div\u003e\n        \u003c/div\u003e\n        \u003ch1 class=\"title\"\u003eこんな人におすすめ\u003c/h1\u003e\n        \n        \u003cdiv class=\"personas-grid\"\u003e\n            \u003cdiv class=\"persona-card\"\u003e\n                \u003cdiv class=\"persona-avatar\"\u003e👨‍💼\u003c/div\u003e\n                \u003ch3 class=\"persona-title\"\u003e営業・マーケティング担当者\u003c/h3\u003e\n                \u003cp class=\"persona-description\"\u003e\n                    \u003cspan class=\"highlight\"\u003e提案資料\u003c/span\u003eや\u003cspan class=\"highlight\"\u003e商品説明\u003c/span\u003eを\u003cbr\u003e\n                    魅力的に表示したい方。\u003cbr\u003e\n                    クライアントへのプレゼンに最適\n                \u003c/p\u003e\n            \u003c/div\u003e\n            \n            \u003cdiv class=\"persona-card\"\u003e\n                \u003cdiv class=\"persona-avatar\"\u003e👩‍🏫\u003c/div\u003e\n                \u003ch3 class=\"persona-title\"\u003e教育関係者\u003c/h3\u003e\n                \u003cp class=\"persona-description\"\u003e\n                    \u003cspan class=\"highlight\"\u003e授業資料\u003c/span\u003eや\u003cspan class=\"highlight\"\u003e研修教材\u003c/span\u003eを\u003cbr\u003e\n                    効果的に共有したい先生や\u003cbr\u003e\n                    トレーナーの方\n                \u003c/p\u003e\n            \u003c/div\u003e\n            \n            \u003cdiv class=\"persona-card\"\u003e\n                \u003cdiv class=\"persona-avatar\"\u003e👨‍💻\u003c/div\u003e\n                \u003ch3 class=\"persona-title\"\u003eエンジニア・開発者\u003c/h3\u003e\n                \u003cp class=\"persona-description\"\u003e\n                    \u003cspan class=\"highlight\"\u003e技術資料\u003c/span\u003eや\u003cspan class=\"highlight\"\u003e仕様書\u003c/span\u003eを\u003cbr\u003e\n                    チーム内で共有したい\u003cbr\u003e\n                    開発チームの方\n                \u003c/p\u003e\n            \u003c/div\u003e\n            \n            \u003cdiv class=\"persona-card\"\u003e\n                \u003cdiv class=\"persona-avatar\"\u003e🏢\u003c/div\u003e\n                \u003ch3 class=\"persona-title\"\u003e企業・組織\u003c/h3\u003e\n                \u003cp class=\"persona-description\"\u003e\n                    \u003cspan class=\"highlight\"\u003e社内報告\u003c/span\u003eや\u003cspan class=\"highlight\"\u003e会議資料\u003c/span\u003eを\u003cbr\u003e\n                    セキュアに管理・共有したい\u003cbr\u003e\n                    組織の方\n                \u003c/p\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e"])</script><script>self.__next_f.push([1,"5:[\"$\",\"$L13\",null,{\"slug\":\"use-cases\",\"currentPage\":2,\"totalPages\":7,\"slideContent\":\"$14\"}]\n"])</script><script>self.__next_f.push([1,"a:null\n"])</script><script>self.__next_f.push([1,"e:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n9:null\n"])</script><script>self.__next_f.push([1,"12:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"HTML Slideshow Viewer\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"A Next.js application for viewing HTML slideshows\"}],[\"$\",\"meta\",\"2\",{\"name\":\"Strict-Transport-Security\",\"content\":\"max-age=31536000; includeSubDomains; preload\"}],[\"$\",\"meta\",\"3\",{\"name\":\"X-Frame-Options\",\"content\":\"DENY\"}],[\"$\",\"meta\",\"4\",{\"name\":\"X-Content-Type-Options\",\"content\":\"nosniff\"}],[\"$\",\"meta\",\"5\",{\"name\":\"X-DNS-Prefetch-Control\",\"content\":\"off\"}],[\"$\",\"meta\",\"6\",{\"name\":\"X-Download-Options\",\"content\":\"noopen\"}],[\"$\",\"meta\",\"7\",{\"name\":\"X-Permitted-Cross-Domain-Policies\",\"content\":\"none\"}],[\"$\",\"meta\",\"8\",{\"name\":\"Referrer-Policy\",\"content\":\"strict-origin-when-cross-origin\"}],[\"$\",\"meta\",\"9\",{\"name\":\"Permissions-Policy\",\"content\":\"camera=(), microphone=(), geolocation=(), payment=()\"}],[\"$\",\"meta\",\"10\",{\"name\":\"Cross-Origin-Embedder-Policy\",\"content\":\"require-corp\"}],[\"$\",\"meta\",\"11\",{\"name\":\"Cross-Origin-Opener-Policy\",\"content\":\"same-origin\"}],[\"$\",\"meta\",\"12\",{\"name\":\"Cross-Origin-Resource-Policy\",\"content\":\"same-site\"}],[\"$\",\"meta\",\"13\",{\"name\":\"Content-Security-Policy\",\"content\":\"default-src 'self'; script-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; style-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests\"}],[\"$\",\"link\",\"14\",{\"rel\":\"icon\",\"href\":\"/slideshow-html/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}]],\"error\":null,\"digest\":\"$undefined\"}\nc:{\"metadata\":\"$12:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>

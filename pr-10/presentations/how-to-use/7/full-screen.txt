@@ -1,0 +1,492 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"08dMET7hb8dELKFO1cHsW","p":"/slideshow-html","c":["","presentations","how-to-use","7","full-screen"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","how-to-use","d"],{"children":[["page","7","d"],{"children":["full-screen",{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"+iq7E6PP0snxGETwDpYqzw==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","how-to-use","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","7","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["full-screen",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","nqiucc28r63-MDTTeKvAN",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[9168,["187","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js"],"FullScreenViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T4026,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度な機能とカスタマイズ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #a29bfe 0%, #74b9ff 100%);
+            color: white;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 1s ease-out;
+            box-sizing: border-box;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .advanced-badge {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #6c5ce7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(108, 92, 231, 0.5); }
+            to { box-shadow: 0 0 20px rgba(108, 92, 231, 0.8); }
+        }
+        
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 18px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+            line-height: 1.2;
+        }
+        
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            flex: 1;
+        }
+        
+        .customization-section {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+        
+        .optimization-section {
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .section-card {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #ffeaa7;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-item {
+            background: rgba(255,255,255,0.1);
+            padding: 8px;
+            border-radius: 8px;
+            border-left: 3px solid #ffeaa7;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.6s ease-out calc(1s + var(--delay)) both;
+        }
+        
+        .feature-item:nth-child(1) { --delay: 0s; }
+        .feature-item:nth-child(2) { --delay: 0.2s; }
+        .feature-item:nth-child(3) { --delay: 0.4s; }
+        .feature-item:nth-child(4) { --delay: 0.6s; }
+        .feature-item:nth-child(5) { --delay: 0.8s; }
+        
+        .feature-item:hover {
+            transform: translateX(5px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        
+        .feature-icon {
+            font-size: 1rem;
+            margin-right: 6px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .feature-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ffeaa7;
+        }
+        
+        .feature-description {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            line-height: 1.3;
+            margin-left: 20px;
+        }
+        
+        .code-example {
+            background: rgba(0,0,0,0.3);
+            padding: 8px;
+            border-radius: 6px;
+            margin-top: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .code-text {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.6rem;
+            color: #74b9ff;
+            line-height: 1.3;
+        }
+        
+        .keyboard-shortcuts {
+            background: rgba(162, 155, 254, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: 2px solid #a29bfe;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out 2s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .shortcuts-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #ffeaa7;
+            text-align: center;
+        }
+        
+        .shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+        
+        .shortcut-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.7rem;
+        }
+        
+        .shortcut-key {
+            background: rgba(255,255,255,0.2);
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-right: 6px;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-weight: bold;
+            min-width: 25px;
+            text-align: center;
+            font-size: 0.6rem;
+        }
+        
+        .tips-section {
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tips-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #ffeaa7;
+            text-align: center;
+        }
+        
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 6px 0;
+            font-size: 0.7rem;
+            line-height: 1.3;
+        }
+        
+        .tip-icon {
+            margin-right: 4px;
+            margin-top: 1px;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="advanced-badge">🔧 上級者向け</div>
+        
+        <h1 class="title">高度な機能とカスタマイズ</h1>
+        
+        <div class="content-layout">
+            <div class="customization-section">
+                <div class="section-card">
+                    <h2 class="section-title">🎨 カスタマイズ機能</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">🌈</span>
+                                <span class="feature-title">テーマカスタマイズ</span>
+                            </div>
+                            <div class="feature-description">
+                                CSS変数でブランドカラーを<span class="highlight">自由に変更</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">✨</span>
+                                <span class="feature-title">アニメーション設定</span>
+                            </div>
+                            <div class="feature-description">
+                                スライドトランジションの<span class="highlight">速度と効果</span>を調整
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">📐</span>
+                                <span class="feature-title">レイアウト調整</span>
+                            </div>
+                            <div class="feature-description">
+                                16:9比率内での<span class="highlight">要素配置最適化</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">🔤</span>
+                                <span class="feature-title">フォント設定</span>
+                            </div>
+                            <div class="feature-description">
+                                Webフォントや<span class="highlight">カスタムタイポグラフィ</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-example">
+                        <div class="code-text">
+                            /* テーマ変更例 */<br>
+                            :root {<br>
+                            &nbsp;&nbsp;--primary-color: #your-brand-color;<br>
+                            &nbsp;&nbsp;--font-family: 'YourFont', sans-serif;<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="optimization-section">
+                <div class="section-card">
+                    <h2 class="section-title">⚡ パフォーマンス最適化</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">🚀</span>
+                                <span class="feature-title">静的生成</span>
+                            </div>
+                            <div class="feature-description">
+                                <span class="highlight">事前生成</span>で瞬時読み込み実現
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">📦</span>
+                                <span class="feature-title">アセット最適化</span>
+                            </div>
+                            <div class="feature-description">
+                                画像圧縮と<span class="highlight">レスポンシブ画像配信</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">🔄</span>
+                                <span class="feature-title">キャッシュ戦略</span>
+                            </div>
+                            <div class="feature-description">
+                                ブラウザキャッシュで<span class="highlight">リピート訪問高速化</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-header">
+                                <span class="feature-icon">📊</span>
+                                <span class="feature-title">パフォーマンス監視</span>
+                            </div>
+                            <div class="feature-description">
+                                Core Web Vitalsによる<span class="highlight">品質管理</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="keyboard-shortcuts">
+                        <div class="shortcuts-title">⌨️ 便利なキーボードショートカット</div>
+                        <div class="shortcuts-grid">
+                            <div class="shortcut-item">
+                                <span class="shortcut-key">←→</span>
+                                <span>スライド移動</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <span class="shortcut-key">F</span>
+                                <span>全画面表示</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <span class="shortcut-key">ESC</span>
+                                <span>全画面解除</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <span class="shortcut-key">Space</span>
+                                <span>次のスライド</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-section">
+                        <div class="tips-title">💡 プロのヒント</div>
+                        <div class="tip-item">
+                            <span class="tip-icon">📱</span>
+                            <span>モバイルでも<span class="highlight">PC同等</span>の表示品質</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🔍</span>
+                            <span>SEO最適化で<span class="highlight">検索エンジン対応</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>5:["$","$L13",null,{"slug":"how-to-use","currentPage":7,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; style-src 'self' 'nonce-+iq7E6PP0snxGETwDpYqzw=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>導入効果の試算</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .roi-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 25px;
+            height: 280px;
+        }
+
+        .cost-comparison {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .time-savings {
+            animation: slideInRight 1s ease-out 0.7s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .comparison-card {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: scan 3s infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffeaa7;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-items {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border-left: 4px solid #fd79a8;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.6s ease-out calc(0.9s + var(--delay)) both;
+        }
+
+        .comparison-item:nth-child(1) { --delay: 0s; }
+        .comparison-item:nth-child(2) { --delay: 0.1s; }
+        .comparison-item:nth-child(3) { --delay: 0.2s; }
+        .comparison-item:nth-child(4) { --delay: 0.3s; }
+
+        .comparison-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(10px);
+        }
+
+        .item-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .item-values {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .old-value {
+            color: #fd79a8;
+            font-weight: bold;
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .new-value {
+            color: #00cec9;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .savings-highlight {
+            background: #00cec9;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .total-savings {
+            background: rgba(0, 206, 201, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 3px solid #00cec9;
+            animation: bounceIn 1.5s ease-out 1.5s both;
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .savings-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffeaa7;
+        }
+
+        .savings-amount {
+            font-size: 40px;
+            font-weight: bold;
+            color: #00cec9;
+            margin: 10px 0;
+            animation: countUp 2s ease-out 2s both;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .savings-description {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out calc(1.8s + var(--delay)) both;
+        }
+
+        .metric-card:nth-child(1) { --delay: 0s; }
+        .metric-card:nth-child(2) { --delay: 0.2s; }
+        .metric-card:nth-child(3) { --delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .metric-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffeaa7;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+
+        .roi-badge {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #00cec9;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(0, 206, 201, 0.5); }
+            to { box-shadow: 0 0 20px rgba(0, 206, 201, 0.8); }
+        }
+    </style>
+</head>
+<body>
+<div class="slide">
+    <div class="roi-badge">📊 ROI分析</div>
+
+    <h1 class="title">導入効果の試算</h1>
+
+    <div class="roi-container">
+        <div class="cost-comparison">
+            <div class="comparison-card">
+                <h2 class="card-title">💰 年間コスト比較</h2>
+                <div class="comparison-items">
+                    <div class="comparison-item">
+                        <span class="item-label">ライセンス費用</span>
+                        <div class="item-values">
+                            <span class="old-value">¥180万</span>
+                            <span class="new-value">¥0</span>
+                            <span class="savings-highlight">-100%</span>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">サポート費用</span>
+                        <div class="item-values">
+                            <span class="old-value">¥36万</span>
+                            <span class="new-value">¥0</span>
+                            <span class="savings-highlight">-100%</span>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">研修・教育費</span>
+                        <div class="item-values">
+                            <span class="old-value">¥24万</span>
+                            <span class="new-value">¥8万</span>
+                            <span class="savings-highlight">-67%</span>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">運用コスト</span>
+                        <div class="item-values">
+                            <span class="old-value">¥12万</span>
+                            <span class="new-value">¥4万</span>
+                            <span class="savings-highlight">-67%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="time-savings">
+            <div class="comparison-card">
+                <h2 class="card-title">⏰ 作業時間短縮</h2>
+                <div class="comparison-items">
+                    <div class="comparison-item">
+                        <span class="item-label">資料作成時間</span>
+                        <div class="item-values">
+                            <span class="old-value">3.5時間</span>
+                            <span class="new-value">1.8時間</span>
+                            <span class="savings-highlight">-49%</span>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">修正対応時間</span>
+                        <div class="item-values">
+                            <span class="old-value">1.2時間</span>
+                            <span class="new-value">0.3時間</span>
+                            <span class="savings-highlight">-75%</span>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">共有・配布時間</span>
+                        <div class="item-values">
+                            <span class="old-value">0.8時間</span>
+                            <span class="new-value">0.1時間</span>
+                            <span class="savings-highlight">-88%</span>
+                        </div>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="item-label">問題対応時間</span>
+                        <div class="item-values">
+                            <span class="old-value">0.5時間</span>
+                            <span class="new-value">0.1時間</span>
+                            <span class="savings-highlight">-80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="total-savings">
+        <h2 class="savings-title">🎯 年間削減効果</h2>
+        <div class="savings-amount">¥248万</div>
+        <p class="savings-description">
+            <span class="highlight">初年度だけで248万円のコスト削減</span>を実現<br>
+            投資回収期間は<span class="highlight">わずか2ヶ月</span>
+        </p>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon">📈</div>
+            <div class="metric-value">415%</div>
+            <div class="metric-label">ROI（投資収益率）</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon">⚡</div>
+            <div class="metric-value">58%</div>
+            <div class="metric-label">作業効率向上</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon">💼</div>
+            <div class="metric-value">240時間</div>
+            <div class="metric-label">年間時間削減</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
