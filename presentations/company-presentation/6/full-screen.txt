@@ -1,0 +1,475 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"PDzQp-mz0IQ2i9o-C2A4Z","p":"/slideshow-html","c":["","presentations","company-presentation","6","full-screen"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","company-presentation","d"],{"children":[["page","6","d"],{"children":["full-screen",{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"lB2N9jdJnJw5ncOSnIULgg==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","company-presentation","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","6","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["full-screen",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","OVlPlxYLFeNvWrRT6KgvC",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[9168,["187","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/full-screen/page-44bd3fdd0f23d6a5.js"],"FullScreenViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T33c6,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まとめと次のステップ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .success-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            animation: float 8s linear infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 80%; animation-delay: 1s; }
+        .particle:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            padding: 40px 60px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: zoomIn 1s ease-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .summary-section {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .summary-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 4s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .summary-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffeaa7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-box {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+            animation: slideInUp 0.8s ease-out calc(0.9s + var(--delay)) both;
+            position: relative;
+        }
+
+        .benefit-box:nth-child(1) { --delay: 0s; }
+        .benefit-box:nth-child(2) { --delay: 0.2s; }
+        .benefit-box:nth-child(3) { --delay: 0.4s; }
+
+        .benefit-box:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .benefit-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .benefit-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .benefit-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffeaa7;
+            margin-bottom: 5px;
+        }
+
+        .benefit-description {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .action-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .next-steps {
+            background: rgba(46, 213, 115, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #2ed573;
+            animation: slideInLeft 1s ease-out 1.2s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .decision-request {
+            background: rgba(255, 107, 107, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #ff6b6b;
+            animation: slideInRight 1s ease-out 1.4s both;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .action-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .steps-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .step-number {
+            background: #2ed573;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .decision-content {
+            text-align: center;
+        }
+
+        .decision-text {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .urgency-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); }
+            to { box-shadow: 0 0 20px rgba(255, 107, 107, 0.8); }
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
+            animation: bounceIn 1.5s ease-out 1.8s both;
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .contact-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #ffeaa7;
+            text-align: center;
+        }
+
+        .contact-details {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+
+        .conclusion-badge {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #0984e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+<div class="success-particles">
+    <div class="particle">💼</div>
+    <div class="particle">🚀</div>
+    <div class="particle">💰</div>
+    <div class="particle">⚡</div>
+    <div class="particle">🎯</div>
+</div>
+
+<div class="slide">
+    <div class="conclusion-badge">🎯 まとめ</div>
+
+    <h1 class="title">導入により実現される価値</h1>
+
+    <div class="summary-section">
+        <h2 class="summary-title">🏆 期待される成果</h2>
+        <div class="benefits-grid">
+            <div class="benefit-box">
+                <div class="benefit-icon">💰</div>
+                <h3 class="benefit-title">コスト削減</h3>
+                <div class="benefit-value">¥248万</div>
+                <p class="benefit-description">年間削減効果</p>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-icon">⚡</div>
+                <h3 class="benefit-title">効率向上</h3>
+                <div class="benefit-value">58%</div>
+                <p class="benefit-description">作業時間短縮</p>
+            </div>
+            <div class="benefit-box">
+                <div class="benefit-icon">📈</div>
+                <h3 class="benefit-title">ROI</h3>
+                <div class="benefit-value">415%</div>
+                <p class="benefit-description">投資収益率</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-section">
+        <div class="next-steps">
+            <h3 class="action-title">📋 今後のアクション</h3>
+            <ul class="steps-list">
+                <li class="step-item">
+                    <div class="step-number">1</div>
+                    <span>技術検証とプロトタイプ作成</span>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">2</div>
+                    <span>部門代表者との協議</span>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">3</div>
+                    <span>パイロットプロジェクト開始</span>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">4</div>
+                    <span>段階的全社展開</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="decision-request">
+            <h3 class="action-title">🚨 ご決定のお願い</h3>
+            <div class="decision-content">
+                <p class="decision-text">
+                    競合他社に先駆けてデジタル変革を実現し、<br>
+                    生産性向上を達成しませんか？
+                </p>
+                <div class="urgency-badge">今すぐ開始</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-info">
+        <h3 class="contact-title">📞 お問い合わせ</h3>
+        <div class="contact-details">
+            <strong>プロジェクト責任者:</strong> 開発チーム<br>
+            <strong>連絡先:</strong> dev-team@company.com | <strong>内線:</strong> 1234<br>
+            <span class="highlight">ご質問・ご相談はいつでもお気軽にお声かけください</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>5:["$","$L13",null,{"slug":"company-presentation","currentPage":6,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-lB2N9jdJnJw5ncOSnIULgg=='; style-src 'self' 'nonce-lB2N9jdJnJw5ncOSnIULgg=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}

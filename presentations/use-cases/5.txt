@@ -1,0 +1,368 @@
+1:"$Sreact.fragment"
+2:I[5693,["177","static/chunks/app/layout-0f5856922dda0942.js"],"SecurityProvider"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+6:I[9665,[],"MetadataBoundary"]
+8:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[6614,[],""]
+:HL["/slideshow-html/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/slideshow-html/_next/static/css/bea8e1239a69bd50.css","style"]
+0:{"P":null,"b":"PDzQp-mz0IQ2i9o-C2A4Z","p":"/slideshow-html","c":["","presentations","use-cases","5"],"i":false,"f":[[["",{"children":["presentations",{"children":[["slug","use-cases","d"],{"children":[["page","5","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/slideshow-html/_next/static/css/bea8e1239a69bd50.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ja","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-screen bg-background font-sans antialiased __variable_5c5449 __variable_300f86","children":["$","$L2",null,{"nonce":"ldUzjUlePuF3dabik+QwoQ==","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["presentations",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","use-cases","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["page","5","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",["$","$L6",null,{"children":"$L7"}],null,["$","$L8",null,{"children":["$L9","$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","e54p43fa-MTDBXVkgcNBX",{"children":[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:"$Sreact.suspense"
+11:I[4911,[],"AsyncMetadata"]
+13:I[1418,["874","static/chunks/874-717cade55bc9f269.js","591","static/chunks/591-1ace861052514e33.js","436","static/chunks/app/presentations/%5Bslug%5D/%5Bpage%5D/page-ce1a0f903d7accee.js"],"PresentationViewer"]
+7:["$","$10",null,{"fallback":null,"children":["$","$L11",null,{"promise":"$@12"}]}]
+14:T2c9b,<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活用シーン3: 技術ドキュメント</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: clamp(12px, 2.5vw, 20px);
+            animation: slideInLeft 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .scenario-badge {
+            background: rgba(255,255,255,0.2);
+            padding: clamp(4px, 1vw, 6px) clamp(8px, 1.8vw, 12px);
+            border-radius: clamp(8px, 1.8vw, 12px);
+            font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+            display: inline-block;
+            margin-bottom: clamp(6px, 1.5vw, 10px);
+            animation: zoomIn 1s ease-out 0.3s both;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .title {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: bold;
+            margin-bottom: clamp(8px, 2vw, 15px);
+            animation: typewriter 2s ease-out 0.5s both;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: clamp(1px, 0.3vw, 2px) solid white;
+        }
+        
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(8px, 2vw, 15px);
+            align-items: start;
+            flex: 1;
+            min-height: 0;
+        }
+        
+        .tech-scenarios {
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .code-example {
+            animation: slideInRight 1s ease-out 1s both;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .scenario-item {
+            background: rgba(255,255,255,0.1);
+            padding: clamp(6px, 1.5vw, 10px);
+            border-radius: clamp(5px, 1.2vw, 8px);
+            margin: clamp(3px, 0.8vw, 6px) 0;
+            border-left: clamp(2px, 0.5vw, 3px) solid #fd79a8;
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s ease-out calc(1.2s + var(--delay)) both;
+        }
+        
+        .scenario-item:nth-child(1) { --delay: 0s; }
+        .scenario-item:nth-child(2) { --delay: 0.2s; }
+        .scenario-item:nth-child(3) { --delay: 0.4s; }
+        .scenario-item:nth-child(4) { --delay: 0.6s; }
+        
+        .scenario-item:hover {
+            transform: translateX(15px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: clamp(8px, 1.8vw, 15px);
+        }
+        
+        .scenario-icon {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-right: clamp(10px, 2vw, 15px);
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .scenario-title {
+            font-size: clamp(1rem, 2.2vw, 1.4rem);
+            font-weight: bold;
+        }
+        
+        .scenario-description {
+            font-size: clamp(0.8rem, 1.6vw, 1rem);
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        
+        .code-container {
+            background: rgba(0,0,0,0.3);
+            border-radius: clamp(10px, 2.5vw, 15px);
+            padding: clamp(15px, 3.5vw, 30px);
+            border: clamp(1px, 0.4vw, 2px) solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .code-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: scan 2s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .code-title {
+            font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+            margin-bottom: clamp(10px, 2.5vw, 20px);
+            color: #fd79a8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .code-icon {
+            margin-right: clamp(6px, 1.5vw, 10px);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .code-snippet {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            background: rgba(0,0,0,0.5);
+            padding: clamp(10px, 2.5vw, 20px);
+            border-radius: clamp(6px, 1.5vw, 10px);
+            font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+            line-height: 1.6;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .keyword {
+            color: #74b9ff;
+            font-weight: bold;
+        }
+        
+        .string {
+            color: #fd79a8;
+        }
+        
+        .comment {
+            color: #636e72;
+            font-style: italic;
+        }
+        
+        .highlight {
+            color: #ffeaa7;
+            font-weight: bold;
+        }
+        
+        .benefits-note {
+            background: rgba(253, 121, 168, 0.2);
+            padding: clamp(10px, 2.5vw, 20px);
+            border-radius: clamp(6px, 1.5vw, 10px);
+            margin-top: clamp(15px, 3.5vw, 30px);
+            border: 1px solid rgba(253, 121, 168, 0.3);
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(253, 121, 168, 0.3); }
+            to { box-shadow: 0 0 20px rgba(253, 121, 168, 0.6); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="scenario-badge">⚡ 活用シーン 3</div>
+        <h1 class="title">技術ドキュメント・API仕様書</h1>
+        
+        <div class="content-layout">
+            <div class="tech-scenarios">
+                <div class="scenario-item">
+                    <div class="scenario-header">
+                        <span class="scenario-icon">📚</span>
+                        <h3 class="scenario-title">API ドキュメント</h3>
+                    </div>
+                    <p class="scenario-description">
+                        <span class="highlight">REST API</span>の仕様書やエンドポイントの説明を<br>
+                        分かりやすく整理して共有
+                    </p>
+                </div>
+                
+                <div class="scenario-item">
+                    <div class="scenario-header">
+                        <span class="scenario-icon">🔧</span>
+                        <h3 class="scenario-title">設計ドキュメント</h3>
+                    </div>
+                    <p class="scenario-description">
+                        システム<span class="highlight">アーキテクチャ</span>や<span class="highlight">データベース設計</span>を<br>
+                        視覚的に表現して共有
+                    </p>
+                </div>
+                
+                <div class="scenario-item">
+                    <div class="scenario-header">
+                        <span class="scenario-icon">📖</span>
+                        <h3 class="scenario-title">チュートリアル</h3>
+                    </div>
+                    <p class="scenario-description">
+                        新技術の<span class="highlight">導入手順</span>や<span class="highlight">使い方ガイド</span>を<br>
+                        ステップバイステップで説明
+                    </p>
+                </div>
+                
+            </div>
+            
+            <div class="code-example">
+                <div class="code-container">
+                    <h3 class="code-title">
+                        <span class="code-icon">💻</span>
+                        コード例の表示
+                    </h3>
+                    <div class="code-snippet">
+<span class="comment">// API エンドポイントの例</span>
+<span class="keyword">GET</span> <span class="string">/api/users/{id}</span>
+
+<span class="comment">// レスポンス例</span>
+{
+  <span class="string">"id"</span>: <span class="keyword">123</span>,
+  <span class="string">"name"</span>: <span class="string">"田中太郎"</span>,
+  <span class="string">"email"</span>: <span class="string">"tanaka@example.com"</span>,
+  <span class="string">"created_at"</span>: <span class="string">"2024-01-01T00:00:00Z"</span>
+}
+
+<span class="comment">// エラーハンドリング</span>
+<span class="keyword">if</span> (user === <span class="keyword">null</span>) {
+  <span class="keyword">return</span> { <span class="string">error</span>: <span class="string">"User not found"</span> };
+}
+                    </div>
+                </div>
+                
+                <div class="benefits-note">
+                    <strong>💡 技術資料の効果</strong><br>
+                    <span class="highlight">シンタックスハイライト</span>付きのコード表示で<br>
+                    開発者の理解度を大幅に向上
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>5:["$","$L13",null,{"slug":"use-cases","currentPage":5,"totalPages":7,"slideContent":"$14"}]
+a:null
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+12:{"metadata":[["$","title","0",{"children":"HTML Slideshow Viewer"}],["$","meta","1",{"name":"description","content":"A Next.js application for viewing HTML slideshows"}],["$","meta","2",{"name":"Strict-Transport-Security","content":"max-age=31536000; includeSubDomains; preload"}],["$","meta","3",{"name":"X-Frame-Options","content":"DENY"}],["$","meta","4",{"name":"X-Content-Type-Options","content":"nosniff"}],["$","meta","5",{"name":"X-DNS-Prefetch-Control","content":"off"}],["$","meta","6",{"name":"X-Download-Options","content":"noopen"}],["$","meta","7",{"name":"X-Permitted-Cross-Domain-Policies","content":"none"}],["$","meta","8",{"name":"Referrer-Policy","content":"strict-origin-when-cross-origin"}],["$","meta","9",{"name":"Permissions-Policy","content":"camera=(), microphone=(), geolocation=(), payment=()"}],["$","meta","10",{"name":"Cross-Origin-Embedder-Policy","content":"require-corp"}],["$","meta","11",{"name":"Cross-Origin-Opener-Policy","content":"same-origin"}],["$","meta","12",{"name":"Cross-Origin-Resource-Policy","content":"same-site"}],["$","meta","13",{"name":"Content-Security-Policy","content":"default-src 'self'; script-src 'self' 'nonce-ldUzjUlePuF3dabik+QwoQ=='; style-src 'self' 'nonce-ldUzjUlePuF3dabik+QwoQ=='; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"}],["$","link","14",{"rel":"icon","href":"/slideshow-html/favicon.ico","type":"image/x-icon","sizes":"16x16"}]],"error":null,"digest":"$undefined"}
+c:{"metadata":"$12:metadata","error":null,"digest":"$undefined"}
