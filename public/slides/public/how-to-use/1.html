@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML スライドショービューア 使い方ガイド</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            text-align: center;
+            width: 1280px;
+            height: 720px;
+            padding: 20px 40px;
+            animation: fadeInUp 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            animation: slideInLeft 1.2s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: slideInRight 1.2s ease-out 0.6s both;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease-out 0.9s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 25px;
+            border-radius: 14px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 180px;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .version {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">HTML スライドショービューア</h1>
+        <p class="subtitle">使い方ガイド - 導入から表示まで</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-text">簡単セットアップ</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💻</div>
+                <div class="feature-text">HTMLファイル対応</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-text">セキュアな表示</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div class="feature-text">レスポンシブ対応</div>
+            </div>
+        </div>
+        
+        <div class="version">v1.0.0</div>
+    </div>
+</body>
+</html>

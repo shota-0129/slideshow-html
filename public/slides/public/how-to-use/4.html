@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ステップ3: スライドの作成</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            padding: 20px 40px;
+            animation: zoomIn 0.8s ease-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .step-number {
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            animation: slideInRight 1s ease-out 0.5s both;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            flex: 1;
+        }
+        
+        .folder-structure {
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .structure-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .folder-tree {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #00cec9;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .folder {
+            color: #ffd700;
+        }
+        
+        .file {
+            color: #74b9ff;
+        }
+        
+        .instructions {
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .instruction-card {
+            background: rgba(255,255,255,0.1);
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .instruction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instruction-number {
+            background: #00cec9;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .instruction-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background: linear-gradient(90deg, #ffecd2, #fcb69f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="step-number">STEP 3</div>
+        <h1 class="title">スライドの作成と配置</h1>
+        
+        <div class="content-grid">
+            <div class="folder-structure">
+                <h3 class="structure-title">📁 フォルダ構造</h3>
+                <div class="folder-tree">
+<span class="folder">public/</span>
+└── <span class="folder">slides/</span>
+    ├── <span class="folder">public/</span>        <span style="opacity:0.7;"># 公開用</span>
+    │   └── <span class="folder">my-presentation/</span>
+    │       ├── <span class="file">1.html</span>
+    │       ├── <span class="file">2.html</span>
+    │       └── <span class="file">3.html</span>
+    └── <span class="folder">private/</span>       <span style="opacity:0.7;"># 非公開用</span>
+        └── <span class="folder">internal-meeting/</span>
+            ├── <span class="file">1.html</span>
+            └── <span class="file">2.html</span>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <div class="instruction-card">
+                    <div class="instruction-number">1</div>
+                    <div class="instruction-text">
+                        <span class="highlight">public/slides/public/</span> に<br>
+                        新しいプレゼンテーション用フォルダを作成
+                    </div>
+                </div>
+                
+                <div class="instruction-card">
+                    <div class="instruction-number">2</div>
+                    <div class="instruction-text">
+                        各スライドを <span class="highlight">1.html, 2.html...</span><br>
+                        の形式で保存
+                    </div>
+                </div>
+                
+                <div class="instruction-card">
+                    <div class="instruction-number">3</div>
+                    <div class="instruction-text">
+                        HTMLファイルには完全な<br>
+                        <span class="highlight">DOCTYPE, head, body</span> を記述
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
